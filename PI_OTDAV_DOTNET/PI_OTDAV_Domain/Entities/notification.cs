@@ -26,9 +26,9 @@ namespace PI_OTDAV_Domain.Entities
         public int? idDestination { get; set; }
 
         public int? idUser { get; set; }
-
+        [ForeignKey("idUser")]
         public virtual user user { get; set; }
-
+        [ForeignKey("idDestination")]
         public virtual user destination { get; set; }
     }
 }
