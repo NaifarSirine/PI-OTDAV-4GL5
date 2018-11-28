@@ -8,10 +8,10 @@ namespace PI_OTDAV_Data
 
     public partial class Context : DbContext
     {
-        public Context(): base("name=Context")
+        public Context() : base("name=Context")
         {
         }
-
+        public virtual DbSet<repartition> repartition { get; set; }
         public virtual DbSet<artworkcategory> artworkcategory { get; set; }
         public virtual DbSet<bankcard> bankcard { get; set; }
         public virtual DbSet<cheque> cheque { get; set; }
@@ -305,6 +305,11 @@ namespace PI_OTDAV_Data
                 .HasMany(e => e.paiment)
                 .WithOptional(e => e.virement)
                 .HasForeignKey(e => e.virement_IdVirement);
+
+            modelBuilder.Entity<perciption>()
+               .HasMany(e => e.repartition)
+               .WithOptional(e => e.perciption)
+               .HasForeignKey(e => e.perception_idPerception);
         }
     }
 }
