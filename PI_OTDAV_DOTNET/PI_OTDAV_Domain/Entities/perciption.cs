@@ -9,6 +9,12 @@ namespace PI_OTDAV_Domain.Entities
     [Table("basepi.perciption")]
     public partial class perciption
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public perciption()
+        {
+            repartition = new HashSet<repartition>();
+        }
+
         [Key]
         public int idPerception { get; set; }
 
@@ -26,5 +32,8 @@ namespace PI_OTDAV_Domain.Entities
         public virtual formuleperception formuleperception { get; set; }
 
         public virtual oeuvredeclaration oeuvredeclaration { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<repartition> repartition { get; set; }
     }
 }
