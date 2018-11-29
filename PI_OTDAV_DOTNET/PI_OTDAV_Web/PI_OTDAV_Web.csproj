@@ -235,20 +235,25 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\OeuvreDeposantController.cs" />
+    <Compile Include="Controllers\ProgrammeController.cs" />
     <Compile Include="Controllers\RegistrationController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\IdentityModels.cs" />
-    <Compile Include="Models\ManageViewModels.cs" />
-    <Compile Include="Models\User.cs" />
+    <Compile Include="fonts\Models\AccountViewModels.cs" />
+    <Compile Include="fonts\Models\IdentityModels.cs" />
+    <Compile Include="fonts\Models\ManageViewModels.cs" />
+    <Compile Include="fonts\Models\OeuvreDeposantViewModel.cs" />
+    <Compile Include="fonts\Models\Programme.cs" />
+    <Compile Include="fonts\Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\uploads\images.png" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -311,6 +316,13 @@
     <Content Include="Views\Login\Dashbord.cshtml" />
     <Content Include="Views\Login\Login.cshtml" />
     <Content Include="Views\Login\Wait.cshtml" />
+    <Content Include="Views\OeuvreDeposant\Create.cshtml" />
+    <Content Include="Views\OeuvreDeposant\Index.cshtml" />
+    <Content Include="Views\OeuvreDeposant\Details.cshtml" />
+    <Content Include="Views\OeuvreDeposant\Delete.cshtml" />
+    <Content Include="Views\Programme\Index.cshtml" />
+    <Content Include="Views\Programme\Create.cshtml" />
+    <Content Include="Views\OeuvreDeposant\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -318,7 +330,6 @@
     <Folder Include="Content\components\" />
     <Folder Include="Content\dist\" />
     <Folder Include="Content\images\" />
-    <Folder Include="Content\uploads\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

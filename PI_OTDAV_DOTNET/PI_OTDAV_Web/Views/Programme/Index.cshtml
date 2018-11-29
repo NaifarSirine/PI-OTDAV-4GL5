@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>ArtworkAffiche</title>
+</head>
+<body>
+    <a href="@Url.Action("Create","prog")">add new Programme</a>
+    <h2>Index</h2>
+    <table class="table">
+        <tr>
+            <th>Titre</th>
+            <th>Titre_exploi</th>
+            <th>Montant</th>
+            <th>Minuteur</th>
+           
+            <th>Date_diff</th>
+        </tr>
+
+        @foreach (var item in ViewBag.result)
+        {
+            <tr>
+                <td>
+                    @item.titre
+                </td>
+                <td>
+                    @item.titre_exploi
+                </td>
+                <td>
+                    @item.montant
+                </td>
+                <td>
+                    @item.minuteur
+                </td>
+
+                <td>
+                    @item.date_diff
+                </td>
+
+                <td>@Html.ActionLink("Supprimer", "Delete", "Programme", new { id = item.id }, null)</td>
+            </tr>
+        }
+
+    </table>
+</body>

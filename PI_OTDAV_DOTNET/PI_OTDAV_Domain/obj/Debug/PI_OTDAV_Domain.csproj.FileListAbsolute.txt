@@ -25,3 +25,15 @@ C:\Users\Windows\Documents\GitHub\PI-OTDAV-4GL5\PI_OTDAV_DOTNET\PI_OTDAV_Domain\
 C:\Users\koussai\Source\Repos\PI-OTDAV-4GL5\PI_OTDAV_DOTNET\PI_OTDAV_Domain\obj\Debug\PI_OTDAV_Domain.csprojResolveAssemblyReference.cache
 C:\Users\koussai\Source\Repos\PI-OTDAV-4GL5\PI_OTDAV_DOTNET\PI_OTDAV_Domain\obj\Debug\PI_OTDAV_Domain.dll
 C:\Users\koussai\Source\Repos\PI-OTDAV-4GL5\PI_OTDAV_DOTNET\PI_OTDAV_Domain\obj\Debug\PI_OTDAV_Domain.pdb
+C:\Users\Youssef\Documents\GitHub\PI-OTDAV-4GL5\PI_OTDAV_DOTNET\PI_OTDAV_Domain\obj\Debug\PI_OTDAV_Domain.csprojResolveAssemblyReference.cache
+C:\Users\Youssef\Documents\GitHub\PI-OTDAV-4GL5\PI_OTDAV_DOTNET\PI_OTDAV_Domain\obj\Debug\PI_OTDAV_Domain.dll
+C:\Users\Youssef\Documents\GitHub\PI-OTDAV-4GL5\PI_OTDAV_DOTNET\PI_OTDAV_Domain\obj\Debug\PI_OTDAV_Domain.pdb
+C:\Users\Youssef\Documents\GitHub\PI-OTDAV-4GL5\PI_OTDAV_DOTNET\PI_OTDAV_Domain\bin\Debug\PI_OTDAV_Domain.dll.config
+C:\Users\Youssef\Documents\GitHub\PI-OTDAV-4GL5\PI_OTDAV_DOTNET\PI_OTDAV_Domain\bin\Debug\PI_OTDAV_Domain.dll
+C:\Users\Youssef\Documents\GitHub\PI-OTDAV-4GL5\PI_OTDAV_DOTNET\PI_OTDAV_Domain\bin\Debug\PI_OTDAV_Domain.pdb
+C:\Users\Youssef\Documents\GitHub\PI-OTDAV-4GL5\PI_OTDAV_DOTNET\PI_OTDAV_Domain\bin\Debug\EntityFramework.dll
+C:\Users\Youssef\Documents\GitHub\PI-OTDAV-4GL5\PI_OTDAV_DOTNET\PI_OTDAV_Domain\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Youssef\Documents\GitHub\PI-OTDAV-4GL5\PI_OTDAV_DOTNET\PI_OTDAV_Domain\bin\Debug\MySql.Data.dll
+C:\Users\Youssef\Documents\GitHub\PI-OTDAV-4GL5\PI_OTDAV_DOTNET\PI_OTDAV_Domain\bin\Debug\MySql.Data.Entity.EF6.dll
+C:\Users\Youssef\Documents\GitHub\PI-OTDAV-4GL5\PI_OTDAV_DOTNET\PI_OTDAV_Domain\bin\Debug\EntityFramework.xml
+C:\Users\Youssef\Documents\GitHub\PI-OTDAV-4GL5\PI_OTDAV_DOTNET\PI_OTDAV_Domain\bin\Debug\EntityFramework.SqlServer.xml

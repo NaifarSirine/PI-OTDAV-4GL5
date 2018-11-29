@@ -81,6 +81,7 @@
     <Compile Include="Entities\perciption.cs" />
     <Compile Include="Entities\programme.cs" />
     <Compile Include="Entities\reclamation.cs" />
+    <Compile Include="Entities\repartition.cs" />
     <Compile Include="Entities\repartitioncategory.cs" />
     <Compile Include="Entities\reponsereclamation.cs" />
     <Compile Include="Entities\user.cs" />

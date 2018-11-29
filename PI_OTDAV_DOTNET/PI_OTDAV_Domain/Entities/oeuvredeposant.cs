@@ -10,7 +10,10 @@ namespace PI_OTDAV_Domain.Entities
     public partial class oeuvredeposant
     {
         public int id { get; set; }
+        [Column(TypeName = "date")]
+        [Display(Name = "Date Début")]
 
+        [DataType(DataType.Date)]
         public DateTime? date_dep { get; set; }
 
         [StringLength(255)]

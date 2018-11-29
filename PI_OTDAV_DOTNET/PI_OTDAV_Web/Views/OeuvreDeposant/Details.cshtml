@@ -1,0 +1,100 @@
+﻿@model PI_OTDAV_Web.Models.OeuvreDeposantViewModel
+
+@{
+    ViewBag.Title = "Details";
+    
+}
+
+<h2>Details</h2>
+<img src="C:/Users/Youssef/Documents/GitHub/PI-OTDAV-4GL5/PI_OTDAV_DOTNET/PI_OTDAV_Web/Content/Upload/logo.png" hidden/>
+<div>
+    <h4>OeuvreDeposantViewModel</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Date_dep)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Date_dep)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Etat_depot)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Etat_depot)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Image)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Image)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Titre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Titre)
+        </dd>
+
+    </dl>
+    <div id="showSubmit">
+        <form>
+            <button class="btn btn-success" onclick="PrintElem()">
+                Imprimer
+            </button>
+        </form>
+    </div>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
+<script>
+    function PrintElem() {
+
+        var mywindow = window.open('', 'PRINT', 'height=400,width=600');
+
+        mywindow.document.write('<html><head><title>' + document.title + '</title>');
+        mywindow.document.write('</head><body >');
+        mywindow.document.write('<h1>' + "Facture" + '</h1>');
+        //mywindow.document.write(document.getElementById('img'));
+        mywindow.document.write('<div style="width:80%;margin-left:10%;border:1.5px solid #1b1a19;border-radius:7px;">');
+       
+        mywindow.document.write('<img src="C:\Users\Youssef\Documents\GitHub\PI-OTDAV-4GL5\PI_OTDAV_DOTNET\PI_OTDAV_Web\Content\Upload\logo.png" style="width:90%;height:250;margin-left:5%"/>');
+        mywindow.document.write('<div style="margin-left:7%"><h3>Bonjour youssef,</h3>Bienvenue chez <b>OTDAV</b>. Voici votre facture !');
+        mywindow.document.write('<div <b>Date de dépot:</b>30/11/2018');
+        mywindow.document.write('<div <b>Description:</b>art');
+        mywindow.document.write('<div <b>Etat:</b>accepte');
+        mywindow.document.write('<div <b>Image:</b><img src="C:\Users\Youssef\Documents\GitHub\PI-OTDAV-4GL5\PI_OTDAV_DOTNET\PI_OTDAV_Web\Content\Upload\logo.png" style="width:50%;height:50;margin-left:5%"/>');
+        mywindow.document.write('<div <b>Titre:</b>youssef');
+
+      
+        mywindow.document.write(document.getElementById("print").innerHTML);
+        mywindow.document.write('<p>Vous pouvez accéder au site : <a style="color:#253c93;text-decoration:none">www.OTDAV.tn</a></p>');
+        mywindow.document.write('</div></div>');
+        mywindow.document.write('</body></html>');
+
+        mywindow.document.close(); // necessary for IE >= 10
+        mywindow.focus(); // necessary for IE >= 10*/
+
+        mywindow.print();
+        mywindow.close();
+
+        return true;
+    }
+</script>

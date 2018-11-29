@@ -11,7 +11,7 @@ namespace PI_OTDAV_Domain.Entities
     {
         public int id { get; set; }
 
-        public float Part { get; set; }
+        public float part { get; set; }
 
         [Column(TypeName = "date")]
         public DateTime? date_diff { get; set; }
