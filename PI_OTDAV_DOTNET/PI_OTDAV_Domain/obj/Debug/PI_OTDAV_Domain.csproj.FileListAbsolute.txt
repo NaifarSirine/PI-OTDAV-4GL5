@@ -22,3 +22,6 @@ C:\Users\Windows\Documents\GitHub\PI-OTDAV-4GL5\PI_OTDAV_DOTNET\PI_OTDAV_Domain\
 C:\Users\Windows\Documents\GitHub\PI-OTDAV-4GL5\PI_OTDAV_DOTNET\PI_OTDAV_Domain\obj\Debug\PI_OTDAV_Domain.csprojResolveAssemblyReference.cache
 C:\Users\Windows\Documents\GitHub\PI-OTDAV-4GL5\PI_OTDAV_DOTNET\PI_OTDAV_Domain\obj\Debug\PI_OTDAV_Domain.dll
 C:\Users\Windows\Documents\GitHub\PI-OTDAV-4GL5\PI_OTDAV_DOTNET\PI_OTDAV_Domain\obj\Debug\PI_OTDAV_Domain.pdb
+C:\Users\koussai\Source\Repos\PI-OTDAV-4GL5\PI_OTDAV_DOTNET\PI_OTDAV_Domain\obj\Debug\PI_OTDAV_Domain.csprojResolveAssemblyReference.cache
+C:\Users\koussai\Source\Repos\PI-OTDAV-4GL5\PI_OTDAV_DOTNET\PI_OTDAV_Domain\obj\Debug\PI_OTDAV_Domain.dll
+C:\Users\koussai\Source\Repos\PI-OTDAV-4GL5\PI_OTDAV_DOTNET\PI_OTDAV_Domain\obj\Debug\PI_OTDAV_Domain.pdb
