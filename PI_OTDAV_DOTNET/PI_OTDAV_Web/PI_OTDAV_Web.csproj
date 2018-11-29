@@ -229,7 +229,9 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\RegistrationController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -307,6 +309,11 @@
     <Content Include="Views\Notification\DisplayNonLu.cshtml" />
     <Content Include="Views\Notification\DisplayLu.cshtml" />
     <Content Include="Views\Reclamation\Display.cshtml" />
+    <Content Include="Views\Login\Banned.cshtml" />
+    <Content Include="Views\Login\Dashbord.cshtml" />
+    <Content Include="Views\Login\Login.cshtml" />
+    <Content Include="Views\Login\Login2.cshtml" />
+    <Content Include="Views\Login\Wait.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

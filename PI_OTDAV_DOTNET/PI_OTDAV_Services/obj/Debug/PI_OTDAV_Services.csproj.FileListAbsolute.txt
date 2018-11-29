@@ -16,3 +16,6 @@ C:\Users\Naifar Sirine\Documents\PI_OTDAV_DOTNET\PI_OTDAV_Services\bin\Debug\PI_
 C:\Users\Naifar Sirine\Documents\PI_OTDAV_DOTNET\PI_OTDAV_Services\obj\Debug\PI_OTDAV_Services.csprojResolveAssemblyReference.cache
 C:\Users\Naifar Sirine\Documents\PI_OTDAV_DOTNET\PI_OTDAV_Services\obj\Debug\PI_OTDAV_Services.dll
 C:\Users\Naifar Sirine\Documents\PI_OTDAV_DOTNET\PI_OTDAV_Services\obj\Debug\PI_OTDAV_Services.pdb
+C:\Users\koussai\Source\Repos\PI-OTDAV-4GL5\PI_OTDAV_DOTNET\PI_OTDAV_Services\obj\Debug\PI_OTDAV_Services.csprojResolveAssemblyReference.cache
+C:\Users\koussai\Source\Repos\PI-OTDAV-4GL5\PI_OTDAV_DOTNET\PI_OTDAV_Services\obj\Debug\PI_OTDAV_Services.dll
+C:\Users\koussai\Source\Repos\PI-OTDAV-4GL5\PI_OTDAV_DOTNET\PI_OTDAV_Services\obj\Debug\PI_OTDAV_Services.pdb
