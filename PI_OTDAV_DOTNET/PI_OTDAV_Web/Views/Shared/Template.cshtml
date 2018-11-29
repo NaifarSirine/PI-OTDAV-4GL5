@@ -50,7 +50,7 @@
                         <div class="separator"></div>
                         <a class="m-1"><i class="icon-user-follow mr-2"></i>Register</a>
                         <div class="separator"></div>
-                        <a class="m-1" id="my-account"><i class="icon-user-follow mr-2"></i>My Account</a>
+                        <a class="m-1" id="my-account"><i class="icon-user-follow mr-2"></i> @HttpContext.Current.Session["user"].ToString()  </a>
                     </div>
                 </div>
             </div>
