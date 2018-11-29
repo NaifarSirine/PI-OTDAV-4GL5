@@ -1,0 +1,125 @@
+﻿@model IEnumerable<PI_OTDAV_Domain.Entities.oeuvredeclaration>
+
+
+<div class="layer-stretch">
+    <div class="layer-wrapper text-center">
+        <div class="layer-ttl"><h4>Vos oeuvres <span class="text-primary">non déclarés</span></h4></div>
+    </div>
+</div>
+<center><b>Nombre de vos oeuvres non déclarés: </b><span class="badge badge-danger"><b>@ViewBag.count1</b></span></center>
+<br /><br />
+<div class="col-12">
+    <div class="panel panel-default">
+        <div class="panel-head">
+            <div class="panel-title">Liste des oeuvres</div>
+        </div>
+        <div class="panel-wrapper">
+            <div class="panel-body">
+                <center>
+                    <table id="example" class="table-striped" width="1400" border="1">
+                        <thead>
+                            <tr>
+                                <th>
+                                    <center><b class="glyphicon-text-height">@Html.DisplayNameFor(model => model.Titre)</b></center>
+                                </th>
+                                <th>
+                                    <center><b class="glyphicon-text-height">@Html.DisplayNameFor(model => model.Description)</b></center>
+                                </th>
+                                <th>
+                                    <center><b class="glyphicon-text-height"> @Html.DisplayNameFor(model => model.Categorie) </b></center>
+                                </th>
+
+                                <th>
+                                    <center><b class="glyphicon-text-height">@Html.DisplayNameFor(model => model.DateInitial)</b></center>
+                                </th>
+
+                                <th></th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+            {
+                                <tr>
+
+                                    <td>
+                                        <center>
+                                            <b class="glyphicon-text-height">
+                                                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                                                @item.Titre  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                                            </b>
+                                        </center>
+                                    </td>
+
+
+                                    <td>
+                                        <center><b class="glyphicon-text-height">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; @item.Description &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</b></center>
+                                    </td>
+
+
+                                    <td>
+                                        <center><b class="glyphicon-text-height">&nbsp; &nbsp; &nbsp;&nbsp;&nbsp; @item.Categorie &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</b></center>
+                                    </td>
+
+                                    <td>
+                                        <center> <b>&nbsp; &nbsp; &nbsp;&nbsp;&nbsp; @item.DateInitial.Value.ToString("dd-MM-yyyy") &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;</b></center>
+                                    </td>
+                                    <td class="panel-body">
+                                        <center>
+                                            <button class="btn btn-success btn-pill btn-toggle">
+                                                @Html.ActionLink("Declarer", "DeeclarerOeuvre", "oeuvredeclaration", new { id = item.id }, new { @class = "" })
+                                            </button>
+                                            <button class="btn btn-warning btn-toggle btn-pill">
+                                                @Html.ActionLink("Modifier", "Edit", "oeuvredeclaration", new { id = item.id }, new { @class = "" })
+                                            </button>
+                                            <button class="btn btn-danger btn-toggle btn-pill">
+                                                @Html.ActionLink("Supprimer", "SupprimerOeuvreDeclarerSimple", "oeuvredeclaration", new { id = item.id }, new { @class = "" })
+                                            </button>
+                                        </center>
+
+                                    </td>
+                                    @*<td="panel-body">
+                                            <center> @Html.ActionLink("Supprimer", "SupprimerOeuvreDeclarer", new { id = item.id }, new { @class = "alert alert-outline alert-danger" })</center>
+                                            <center> @Html.ActionLink("Supprimer", "SupprimerOeuvreDeclarer", new { id = item.id }, new { @class = "alert alert-outline alert-danger" })</center>
+                                            <center> @Html.ActionLink("Supprimer", "SupprimerOeuvreDeclarer", new { id = item.id }, new { @class = "alert alert-outline alert-danger" })</center>
+
+
+                                        </td>*@
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                    <center>
+                        <div class="btn btn-outline btn-primary btn-pill btn-outline-2x btn-lg mt-3">
+                            <div class="container">
+                                <div class="navbar-header">
+                                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                                        <span class="icon-bar"></span>
+                                        <span class="icon-bar"></span>
+                                        <span class="icon-bar"></span>
+                                    </button>
+                                    @Html.ActionLink("Ajouter une nouvelle oeuvre ", "AjouterOuvre", "oeuvredeclaration", new { area = "" }, new { @class = "navbar-brand" })
+                                    <i class="fa fa-check"></i>
+
+                                </div>
+                            </div>
+                        </div>
+                    </center>
+                    <br /><br />
+
+                </center>
+            </div>
+        </div>
+    </div>
+</div>
+<br /><br /><br /><br /><br /><br /><br /><br />
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#example').DataTable();
+    });
+</script>
+
+
+
+

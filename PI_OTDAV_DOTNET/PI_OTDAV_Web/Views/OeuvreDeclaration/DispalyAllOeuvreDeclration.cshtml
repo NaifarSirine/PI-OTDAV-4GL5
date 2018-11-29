@@ -1,0 +1,119 @@
+﻿@model IEnumerable<PI_OTDAV_Web.Models.oeuvredeclaration>
+
+@{
+    ViewBag.Title = "DispalyAllOeuvreDeclration";
+}
+
+<div class="layer-stretch">
+    <div class="layer-wrapper text-center">
+        <div class="layer-ttl"><h4>Oeuvres <span class="text-primary">protégés</span> par l'OTDAV</h4></div>
+    </div>
+</div>
+<center><b>Nombre de vos oeuvres protégées: </b><span class="badge badge-success badge-sm"><b>@ViewBag.count</b></span></center>
+<br /><br />
+<div class="col-12">
+    <div class="panel panel-default">
+        <div class="panel-head">
+            <div class="panel-title">Liste des oeuvres</div>
+        </div>
+        <div class="panel-wrapper">
+            <div class="panel-body">
+                <center>
+                    <table id="example" class="table-striped" width="1400" border="1">
+                        <thead>
+                            <tr>
+                                <th>
+                                    <center><b class="glyphicon-text-height">@Html.DisplayNameFor(model => model.titre)</b></center>
+                                </th>
+                                <th>
+                                    <center><b class="glyphicon-text-height">@Html.DisplayNameFor(model => model.description)</b></center>
+                                </th>
+                                <th>
+                                    <center><b class="glyphicon-text-height"> @Html.DisplayNameFor(model => model.categorie)</b></center>
+                                </th>
+
+                                <th>
+                                </th>
+
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in ViewBag.result)
+                            {
+                                <tr>
+
+                                    <td>
+                                        <center> <b class="glyphicon-text-height">@item.titre</b></center>
+                                    </td>
+
+
+                                    <td>
+                                        <center><b class="glyphicon-text-height"> @item.description</b></center>
+                                    </td>
+
+
+                                    <td>
+                                        <center> <b class="glyphicon-text-height"> @item.categorie</b></center>
+                                    </td>
+
+
+
+                                    <td>
+                                        <center>
+                                            <div class="btn btn-outline btn-success btn-outline-2x m-1">
+                                                <div class="container">
+                                                    <div class="navbar-header">
+                                                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                                                            <span class="icon-bar"></span>
+                                                            <span class="icon-bar"></span>
+                                                            <span class="icon-bar"></span>
+                                                        </button>
+                                                        @Html.ActionLink("Protégée ", "DispalyAllOeuvreDeclration", "OeuvreDeclaration", new { area = "" }, new { @class = "navbar-brand" })
+                                                        <i class="fa fa-check"></i>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </center>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                    <br /><br />
+                    <center>
+                        <div class="btn btn-outline btn-primary btn-pill btn-outline-1x m-1">
+                            <div class="container">
+                                <div class="navbar-header">
+                                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                                        <span class="icon-bar"></span>
+                                        <span class="icon-bar"></span>
+                                        <span class="icon-bar"></span>
+                                    </button>
+                                    @Html.ActionLink("Statistique sur les oeuvres protégées", "PieChart", "statod", new { area = "" }, new { @class = "navbar-brand" })
+                                    <i class="far fa-chart-bar"></i>
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </center>
+                    <br /><br />
+
+                </center>
+            </div>
+        </div>
+    </div>
+</div>
+<br /><br /><br /><br /><br /><br /><br /><br />
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#example').DataTable();
+    });
+</script>
+<br /><br />
+
+
+

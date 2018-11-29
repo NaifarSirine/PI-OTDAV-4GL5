@@ -1,0 +1,118 @@
+﻿@model IEnumerable<PI_OTDAV_Domain.Entities.oeuvredeclaration>
+
+<div class="layer-stretch">
+    <div class="layer-wrapper text-center">
+        <div class="layer-ttl"><h4>Oeuvres <span class="text-primary">supprimées</span> par l'OTDAV</h4></div>
+    </div>
+</div>
+<br /><br />
+<div class="col-12">
+    <div class="panel panel-default">
+        <div class="panel-head">
+            <div class="panel-title">Liste des oeuvres</div>
+        </div>
+        <div class="panel-wrapper">
+            <div class="panel-body">
+                <center>
+                    <table id="example" class="table-striped" width="1400" border="1">
+                        <thead>
+                            <tr>
+                                <th>
+                                    <center><b class="glyphicon-text-height">@Html.DisplayNameFor(model => model.Titre)</b></center>
+                                </th>
+                                <th>
+                                    <center><b class="glyphicon-text-height">@Html.DisplayNameFor(model => model.Description)</b></center>
+                                </th>
+                                <th>
+                                    <center><b class="glyphicon-text-height"> @Html.DisplayNameFor(model => model.Categorie)</b></center>
+                                </th>
+                                <th>
+                                    <center><b class="glyphicon-text-height">@Html.DisplayNameFor(model => model.Deadline)</b></center>
+                                </th>
+                                <th>
+                                    <center><b class="glyphicon-text-height">@Html.DisplayNameFor(model => model.EtatDeadline)</b></center>
+                                </th>
+                                <th>
+                                    <center><b class="glyphicon-text-height">@Html.DisplayNameFor(model => model.DeadlineFirstAlerte)</b></center>
+                                </th>
+                                <th>
+                                    <center><b class="glyphicon-text-height">@Html.DisplayNameFor(model => model.EtatFirstAlerte)</b></center>
+                                </th>
+
+                                <th>
+                                </th>
+
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+
+                                    <td>
+                                        <center> <b class="glyphicon-text-height">@item.Titre</b></center>
+                                    </td>
+
+
+                                    <td>
+                                        <center><b class="glyphicon-text-height"> @item.Description</b></center>
+                                    </td>
+
+
+                                    <td>
+                                        <center> <b class="glyphicon-text-height"> @item.Categorie</b></center>
+                                    </td>
+
+                                    <th>
+                                        <center><b class="glyphicon-text-height">@item.Deadline.Value.ToString("dd-MM-yyyy")</b></center>
+                                    </th>
+                                    <th>
+                                        <center><b class="glyphicon-text-height">@item.EtatDeadline</b></center>
+                                    </th>
+                                    <th>
+                                        <center><b class="glyphicon-text-height">@item.DeadlineFirstAlerte.Value.ToString("dd-MM-yyyy")</b></center>
+                                    </th>
+                                    <th>
+                                        <center><b class="glyphicon-text-height">@item.EtatFirstAlerte</b></center>
+                                    </th>
+
+
+                                    <td>
+                                        <center>
+                                            <div class="btn btn-outline btn-danger btn-outline-2x m-1">
+                                                <div class="container">
+                                                    <div class="navbar-header">
+                                                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                                                            <span class="icon-bar"></span>
+                                                            <span class="icon-bar"></span>
+                                                            <span class="icon-bar"></span>
+                                                        </button>
+                                                        @Html.ActionLink("Supprimée ", "DispalySupprimerArtWorkByUser", "OeuvreDeclaration", new { area = "" }, new { @class = "navbar-brand" })
+                                                        <i class="fa fa-exclamation-triangle"></i>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </center>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                    <br /><br />
+                </center>
+            </div>
+        </div>
+    </div>
+</div>
+<br /><br /><br /><br /><br /><br /><br /><br />
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#example').DataTable();
+    });
+</script>
+<br /><br />
+
+
+
