@@ -25,5 +25,6 @@ namespace PI_OTDAV_Domain.Entities
 
         [StringLength(255)]
         public string titre_exploi { get; set; }
+        
     }
 }
