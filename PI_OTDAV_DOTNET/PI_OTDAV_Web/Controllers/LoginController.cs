@@ -17,7 +17,7 @@ namespace PI_OTDAV_Web.Controllers
             HttpClient client = new HttpClient();
             client.BaseAddress = new Uri("http://localhost:18080");
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-            HttpResponseMessage response = client.GetAsync("PI_OTDAV_4GL5B-web/OTDAV/user/" + username + "/" + password).Result;
+            HttpResponseMessage response = client.GetAsync("PI_OTDAV_4GL5B-web/api/user/" + username + "/" + password).Result;
             if (response.IsSuccessStatusCode)
             {
 
@@ -66,6 +66,13 @@ namespace PI_OTDAV_Web.Controllers
             }
             return View("login");
         }
+
+        // GET: Login/Details/5
+        public ActionResult GoHome(int id)
+        {
+            return View("Login");
+        }
+
 
         // GET: Login/Details/5
         public ActionResult Details(int id)
