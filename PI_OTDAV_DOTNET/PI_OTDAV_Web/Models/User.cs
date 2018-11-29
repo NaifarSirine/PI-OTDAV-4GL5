@@ -24,6 +24,7 @@ namespace PI_OTDAV_Web.Models
         public string address { get; set; }
 
         [Required]
+        [DataType(DataType.Date)]
         public DateTime? birthday { get; set; }
 
         [StringLength(maximumLength: 8, MinimumLength = 8)]

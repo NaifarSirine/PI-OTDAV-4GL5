@@ -1,6 +1,6 @@
 ﻿
 @{
-    Layout = null;
+    Layout = "~/Views/Shared/Template.cshtml";
 }
 
 <!DOCTYPE html>
@@ -11,8 +11,9 @@
     <title>Dashbord</title>
 </head>
 <body>
-    <div> 
-        accountType : 
+    <div>
+        @HttpContext.Current.Session["id"].ToString();
+        accountType :
         @ViewBag.result.accountType
     </div>
 </body>
