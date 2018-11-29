@@ -34,12 +34,11 @@ namespace PI_OTDAV_Web.Controllers
         {
             try
             {
+                user.accountType = "DEPOSITOR"; 
                 HttpClient client = new HttpClient();
                 client.BaseAddress = new Uri("http://localhost:18080");
                 client.PostAsJsonAsync<User>("PI_OTDAV_4GL5B-web/OTDAV/user", user).ContinueWith((postTask) => postTask.Result.EnsureSuccessStatusCode());
-                return RedirectToAction("Index");
-
-                
+                return RedirectToAction("Login");
             }
             catch
             {

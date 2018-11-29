@@ -33,6 +33,10 @@ namespace PI_OTDAV_Web.Controllers
                         ViewBag.result.accountType == "MEMBER") &&
                         ViewBag.result.accountStatuts == "ACTIF")
                     {
+                            Session["id"] = ViewBag.result.id;
+                            Session["nom"] = ViewBag.result.firstName;
+                            Session["prenom"] = ViewBag.result.lastName;
+                           
                         return View("Dashbord");
                     }
                     else if ((ViewBag.result.accountType == "DEPOSITOR" ||
@@ -67,12 +71,16 @@ namespace PI_OTDAV_Web.Controllers
             return View("login");
         }
 
-        // GET: Login/Details/5
-        public ActionResult GoHome(int id)
+        // GET: Login/GoHome
+        public ActionResult GoHome()
         {
             return View("Login");
         }
 
+        public ActionResult GoRegDep()
+        {
+            return View("RegDep");
+        }
 
         // GET: Login/Details/5
         public ActionResult Details(int id)

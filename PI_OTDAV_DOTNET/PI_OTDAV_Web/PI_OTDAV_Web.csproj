@@ -311,6 +311,7 @@
     <Content Include="Views\Login\Dashbord.cshtml" />
     <Content Include="Views\Login\Login.cshtml" />
     <Content Include="Views\Login\Wait.cshtml" />
+    <Content Include="Views\Login\RegDep.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -319,6 +320,7 @@
     <Folder Include="Content\dist\" />
     <Folder Include="Content\images\" />
     <Folder Include="Content\uploads\" />
+    <Folder Include="Views\Registration\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
