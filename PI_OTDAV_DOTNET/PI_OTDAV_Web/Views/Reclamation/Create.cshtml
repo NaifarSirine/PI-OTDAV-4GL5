@@ -1,0 +1,44 @@
+﻿@model PI_OTDAV_Web.Models.Reclamation
+
+@{
+    ViewBag.Title = "Create";
+}
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+<div class="layer-tablet">
+    <div class="layer-wrapper pt-0" style="border-top-width: 10px;top: 100px;margin-bottom: 100px;">
+        <div class="layer-ttl"><h4>Faire <span class="text-primary">une </span>réclamation</h4></div>
+        <div class="layer-sub-ttl">Vos réclamations améliorent notre service</div>
+        <div class="row mt-4 mr-5 ml-5">
+            
+            <div class="col-md-6">
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input">
+                    @Html.LabelFor(model => model.type, htmlAttributes: new { @class = "mdl-textfield__label" })&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    @Html.DropDownListFor(model => model.type,
+       new List<SelectListItem> {
+                       new SelectListItem { Value = "Autre" , Text = "Autre" },
+                       new SelectListItem { Value = "Suggestion" , Text = "Suggestion" },
+                       new SelectListItem { Value = "Financier" , Text = "Financier" },
+                       new SelectListItem { Value = "Oeuvre" , Text = "Oeuvre" },
+                       new SelectListItem { Value = "Systeme" , Text = "Système" } }, new { htmlAttributes = new { @class = "custom - select" } })
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input">
+                    @Html.EditorFor(model => model.description, new { htmlAttributes = new { @class = "mdl-textfield__input", required = "required" } })
+                    @Html.LabelFor(model => model.description, htmlAttributes: new { @class = "mdl-textfield__label" })
+                </div>
+            </div>
+            <div class="col-12 text-center">
+                <button class="btn btn-outline btn-success btn-pill btn-outline-1x m-1">Submit</button>
+                <a class="btn btn-outline btn-danger btn-pill btn-outline-1x m-1" href="/Reclamation/Display?idUser=@ViewBag.userId">Retour</a>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+}
+
+        

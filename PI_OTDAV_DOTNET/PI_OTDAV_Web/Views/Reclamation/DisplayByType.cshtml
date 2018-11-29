@@ -1,0 +1,344 @@
+﻿@model IEnumerable<PI_OTDAV_Domain.Entities.reclamation>
+    <br /><br /><br />
+<div class="col-lg-12">
+    <div class="panel panel-default">
+        <div class="panel-head">
+            <center><div><h4>Trier <span class="text-primary">les réclamations</span> selon le type</h4></div></center> 
+        </div>
+        <div class="panel-wrapper">
+            <div class="panel-body">
+                <ul class="nav nav-tabs nav-tabs-line">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#Autre13" data-toggle="tab">Autre(@ViewBag.count0)</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#Suggestion13" data-toggle="tab">Suggestion(@ViewBag.count1)</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" href="#Financier13" data-toggle="tab">Financier(@ViewBag.count2)</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" href="#Oeuvre13" data-toggle="tab">Oeuvre(@ViewBag.count3)</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" href="#Systeme13" data-toggle="tab">Système(@ViewBag.count4)</a>
+                    </li>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" href="/Reclamation/Display?idUser=@ViewBag.UserId">Retour</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#setting13" data-toggle="tab">
+                            <i class="fa fa-gear"></i>
+                        </a>
+                    </li>
+                    
+                </ul>
+                <div class="tab-content">
+                    <div role="tabpanel" class="tab-pane active" id="Autre13">
+                        @if (ViewBag.count0 != 0)
+                        {
+                            <div class="layer-ttl" style="left: 0px;right: 0px;width: 1250px;height:40px;">* Pour vous accéder à la page de détail de chaque réclamation,vous devez cliquer sur le contenu de n'imorte quelle colonne de la réclamtion(Description,Date de la réclamation...) </div>
+                            <table id="myTable" class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>
+                                            Date de la réclamation
+                                        </th>
+                                        <th>
+                                            Description
+                                        </th>
+                                        <th>
+                                            Etat
+                                        </th>
+                                        <th>
+                                            Type
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in ViewBag.listeAutre)
+                                    {
+                                        <tr>
+
+                                            <td>
+                                                <a href="/ReponseReclamation/Display?idReclamation=@item.idReclamation"> @item.dateReclamation</a>
+                                            </td>
+                                            <td id="SearchTable" style="max-width: 300px;overflow: hidden;text-overflow: ellipsis;">
+                                                <a href="/ReponseReclamation/Display?idReclamation=@item.idReclamation">@item.description</a>
+                                            </td>
+                                            <td>
+                                                <a href="/ReponseReclamation/Display?idReclamation=@item.idReclamation">@item.etat</a>
+                                            </td>
+                                            <td>
+                                                <a href="/ReponseReclamation/Display?idReclamation=@item.idReclamation">@item.type</a>
+                                            </td>
+                                        </tr>
+
+                                    }
+                                </tbody>
+                            </table>
+                        }
+                        else
+                        {
+                            <center>
+                                <div class="alert alert-light" role="alert">
+                                    Contenu vide !
+                                </div>
+                            </center>
+                        }
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="Suggestion13">
+                        @if (ViewBag.count1 != 0)
+                        {
+                            <div class="layer-ttl" style="left: 0px;right: 0px;width: 1250px;height:40px;">* Pour vous accéder à la page de détail de chaque réclamation,vous devez cliquer sur le contenu de n'imorte quelle colonne de la réclamtion(Description,Date de la réclamation...) </div>
+                            <table id="myTable2" class="table table-hover">
+
+                                <thead>
+                                    <tr>
+                                        <th>
+                                            Date de la réclamation
+                                        </th>
+                                        <th>
+                                            Description
+                                        </th>
+                                        <th>
+                                            Etat
+                                        </th>
+                                        <th>
+                                            Type
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in ViewBag.listeSuggestion)
+                                    {
+                                        <tr>
+
+                                            <td>
+                                                <a href="/ReponseReclamation/Display?idReclamation=@item.idReclamation"> @item.dateReclamation</a>
+                                            </td>
+                                            <td id="SearchTable" style="max-width: 300px;overflow: hidden;text-overflow: ellipsis;">
+                                                <a href="/ReponseReclamation/Display?idReclamation=@item.idReclamation">@item.description</a>
+                                            </td>
+                                            <td>
+                                                <a href="/ReponseReclamation/Display?idReclamation=@item.idReclamation">@item.etat</a>
+                                            </td>
+                                            <td>
+                                                <a href="/ReponseReclamation/Display?idReclamation=@item.idReclamation">@item.type</a>
+                                            </td>
+                                        </tr>
+
+                                    }
+                                </tbody>
+                            </table>
+                        }
+                        else
+                        {
+                            <center>
+                                <div class="alert alert-light" role="alert">
+                                    Contenu vide !
+                                </div>
+                            </center>
+                        }
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="Financier13">
+                        @if (ViewBag.count2 != 0)
+                        {
+                            <div class="layer-ttl" style="left: 0px;right: 0px;width: 1250px;height:40px;">* Pour vous accéder à la page de détail de chaque réclamation,vous devez cliquer sur le contenu de n'imorte quelle colonne de la réclamtion(Description,Date de la réclamation...) </div>
+                            <table id="myTable3" class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>
+                                            Date de la réclamation
+                                        </th>
+                                        <th>
+                                            Description
+                                        </th>
+                                        <th>
+                                            Etat
+                                        </th>
+                                        <th>
+                                            Type
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in ViewBag.listeFinancier)
+                                    {
+                                        <tr>
+
+                                            <td>
+                                                <a href="/ReponseReclamation/Display?idReclamation=@item.idReclamation"> @item.dateReclamation</a>
+                                            </td>
+                                            <td id="SearchTable" style="max-width: 300px;overflow: hidden;text-overflow: ellipsis;">
+                                                <a href="/ReponseReclamation/Display?idReclamation=@item.idReclamation">@item.description</a>
+                                            </td>
+                                            <td>
+                                                <a href="/ReponseReclamation/Display?idReclamation=@item.idReclamation">@item.etat</a>
+                                            </td>
+                                            <td>
+                                                <a href="/ReponseReclamation/Display?idReclamation=@item.idReclamation">@item.type</a>
+                                            </td>
+                                        </tr>
+
+                                    }
+                                </tbody>
+                            </table>
+                        }
+                        else
+                        {
+                            <center>
+                                <div class="alert alert-light" role="alert">
+                                    Contenu vide !
+                                </div>
+                            </center>
+                        }
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="Oeuvre13">
+                       @if (ViewBag.count3 != 0)
+                       {
+                        <div class="layer-ttl" style="left: 0px;right: 0px;width: 1250px;height:40px;">* Pour vous accéder à la page de détail de chaque réclamation,vous devez cliquer sur le contenu de n'imorte quelle colonne de la réclamtion(Description,Date de la réclamation...) </div>
+                            <table id="myTable4" class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>
+                                            Date de la réclamation
+                                        </th>
+                                        <th>
+                                            Description
+                                        </th>
+                                        <th>
+                                            Etat
+                                        </th>
+                                        <th>
+                                            Type
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in ViewBag.listeOeuvre)
+                                    {
+                                        <tr>
+
+                                            <td>
+                                                <a href="/ReponseReclamation/Display?idReclamation=@item.idReclamation"> @item.dateReclamation</a>
+                                            </td>
+                                            <td id="SearchTable" style="max-width: 300px;overflow: hidden;text-overflow: ellipsis;">
+                                                <a href="/ReponseReclamation/Display?idReclamation=@item.idReclamation">@item.description</a>
+                                            </td>
+                                            <td>
+                                                <a href="/ReponseReclamation/Display?idReclamation=@item.idReclamation">@item.etat</a>
+                                            </td>
+                                            <td>
+                                                <a href="/ReponseReclamation/Display?idReclamation=@item.idReclamation">@item.type</a>
+                                            </td>
+                                        </tr>
+
+                                    }
+                                </tbody>
+                            </table>
+                       }
+                       else
+                       {
+                        <center>
+                            <div class="alert alert-light" role="alert">
+                                Contenu vide !
+                            </div>
+                        </center>
+                       }
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="Systeme13">
+                        @if (ViewBag.count4 != 0)
+                        {
+                            <div class="layer-ttl" style="left: 0px;right: 0px;width: 1250px;height:40px;">* Pour vous accéder à la page de détail de chaque réclamation,vous devez cliquer sur le contenu de n'imorte quelle colonne de la réclamtion(Description,Date de la réclamation...) </div>
+                            <table id="myTable5" class="table table-hover">
+
+                                <thead>
+                                    <tr>
+                                        <th>
+                                            Date de la réclamation
+                                        </th>
+                                        <th>
+                                            Description
+                                        </th>
+                                        <th>
+                                            Etat
+                                        </th>
+                                        <th>
+                                            Type
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in ViewBag.listeSysteme)
+                                    {
+                                        <tr>
+
+                                            <td>
+                                                <a href="/ReponseReclamation/Display?idReclamation=@item.idReclamation"> @item.dateReclamation</a>
+                                            </td>
+                                            <td id="SearchTable" style="max-width: 300px;overflow: hidden;text-overflow: ellipsis;">
+                                                <a href="/ReponseReclamation/Display?idReclamation=@item.idReclamation">@item.description</a>
+                                            </td>
+                                            <td>
+                                                <a href="/ReponseReclamation/Display?idReclamation=@item.idReclamation">@item.etat</a>
+                                            </td>
+                                            <td>
+                                                <a href="/ReponseReclamation/Display?idReclamation=@item.idReclamation">@item.type</a>
+                                            </td>
+                                        </tr>
+
+                                    }
+                                </tbody>
+                            </table>
+                        }
+                        else
+                        {
+                            <center>
+                                <div class="alert alert-light" role="alert">
+                                    Contenu vide !
+                                </div>
+                            </center>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</br>
+
+<script type="text/javascript">
+        $(document).ready(function () {
+            $('#myTable').DataTable();
+        });
+</script>
+<script type="text/javascript">
+        $(document).ready(function () {
+            $('#myTable2').DataTable();
+        });
+</script>
+<script type="text/javascript">
+        $(document).ready(function () {
+            $('#myTable3').DataTable();
+        });
+</script>
+<script type="text/javascript">
+        $(document).ready(function () {
+            $('#myTable4').DataTable();
+        });
+</script>
+<script type="text/javascript">
+        $(document).ready(function () {
+            $('#myTable5').DataTable();
+        });
+</script>

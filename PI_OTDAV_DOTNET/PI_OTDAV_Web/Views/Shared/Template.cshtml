@@ -42,15 +42,15 @@
         <div class="hdr-topbar">
             <div class="layer-stretch">
                 <div class="row pt-3 pb-3 align-items-center">
-                    @*<div class="col-md-5">
+                    <div class="col-md-5">
                         <img alt="Logo OTDAV" src="~/Mail/logo.png" width="180" height="80" />
-                    </div>*@
+                    </div>
                     <div class="col-md-7 hdr-link text-right d-none d-sm-none d-md-block d-lg-block d-xl-block">
                         <a class="m-1"><i class="icon-login mr-2"></i>Login</a>
                         <div class="separator"></div>
                         <a class="m-1"><i class="icon-user-follow mr-2"></i>Register</a>
                         <div class="separator"></div>
-                        <a class="m-1" id="my-account"><i class="icon-user-follow mr-2"></i> @HttpContext.Current.Session["user"].ToString()  </a>
+                        <a class="m-1" id="my-account"><i class="icon-user-follow mr-2"></i>@HttpContext.Current.Session["userName"]</a>
                     </div>
                 </div>
             </div>
@@ -59,9 +59,7 @@
             <div class="tbl">
                 <div class="tbl-row">
                     <!-- Start Header Logo Section -->
-                  <!--  <div class="tbl-cell hdr-logo">
-                        <a href="index.html"><img src="images/logo.png" alt=""></a>
-                    </div> End Header Logo Section -->
+                   
                     <div class="tbl-cell hdr-menu">
                         <!-- Start Menu Section -->
                         <ul class="menu">
@@ -297,46 +295,11 @@
                                 </ul>
                             </li>
                             <li class="menu-megamenu-li">
-                                <a class="mdl-button mdl-js-button mdl-js-ripple-effect">Components <i class="fa fa-chevron-down"></i></a>
-                                <ul class="menu-megamenu menu-megamenu-small">
-                                    <li class="row">
-                                        <div class="col-lg-4">
-                                            <div class="megamenu-ttl">Components Link</div>
-                                            <ul>
-                                                <li><a href="components/accordions.html"><i class="icon-plus mr-2"></i> Accordions</a></li>
-                                                <li><a href="components/alerts.html"><i class="icon-exclamation mr-2"></i> Alerts</a></li>
-                                                <li><a href="components/badges.html"><i class="icon-badge mr-2"></i> Badge</a></li>
-                                                <li><a href="components/buttons.html"><i class="icon-star mr-2"></i> Buttons</a></li>
-                                                <li><a href="components/cards.html"><i class="icon-credit-card mr-2"></i> Cards</a></li>
-                                                <li><a href="components/dropcap.html"><i class="icon-bulb mr-2"></i> Dropcap</a></li>
-                                            </ul>
-                                        </div>
-                                        <div class="col-lg-4">
-                                            <div class="megamenu-ttl">Components Link</div>
-                                            <ul>
-                                                <li><a href="components/grid.html"><i class="icon-grid mr-2"></i> Grid</a></li>
-                                                <li><a href="components/lists.html"><i class="icon-list mr-2"></i> Lists</a></li>
-                                                <li><a href="components/panels.html"><i class="icon-speedometer mr-2"></i> Panels</a></li>
-                                                <li><a href="components/pricingtable.html"><i class="fa fa-table mr-2"></i> Pricing Table</a></li>
-                                                <li><a href="components/progressbars.html"><i class="icon-chart mr-2"></i> Progressbars</a></li>
-                                                <li><a href="components/sliders.html"><i class="icon-compass mr-2"></i> Sliders</a></li>
-                                            </ul>
-                                        </div>
-                                        <div class="col-lg-4">
-                                            <div class="megamenu-ttl">Components Link</div>
-                                            <ul>
-                                                <li><a href="components/social-list.html"><i class="icon-list mr-2"></i> Social List</a></li>
-                                                <li><a href="components/tables.html"><i class="fa fa-table mr-2"></i> Tables</a></li>
-                                                <li><a href="components/tabs.html"><i class="icon-cursor mr-2"></i> Tabs</a></li>
-                                                <li><a href="components/typography.html"><i class="icon-tag mr-2"></i> Typography</a></li>
-                                            </ul>
-                                        </div>
-                                    </li>
-                                </ul>
+                                <a class="mdl-button mdl-js-button mdl-js-ripple-effect" href="/Reclamation/Display?idUser= @HttpContext.Current.Session["id"]">Gestion des réclamations</a>
                             </li>
                            
                             <li>
-                                <a class="mdl-button mdl-js-button mdl-js-ripple-effect hdr-search" href="#"><i class="fa fa-bell"></i><span class="cart-count">!<span></a>
+                                <a class="mdl-button mdl-js-button mdl-js-ripple-effect hdr-search" href="/Notification/DisplayNonLu?idDestination= @HttpContext.Current.Session["id"]"><i class="fa fa-bell"></i><span class="cart-count">@HttpContext.Current.Session["nbNotif"]<span></a>
                             </li>
                             <li class="mobile-menu-close"><i class="fa fa-times"></i></li>
 

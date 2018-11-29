@@ -1,0 +1,130 @@
+﻿@model PI_OTDAV_Web.Models.ReponseReclamation
+@{
+    ViewBag.Title = "List";
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Response list</title>
+</head>
+
+<body>
+
+    <div class="layer-tablet">
+        <div class="layer-wrapper pt-0" style="border-top-width: 10px;top: 100px;margin-bottom: 100px;padding-bottom: 20px;">
+            <div class="layer-ttl"><h4>Les détails de la  <span class="text-primary">réclamation </span>sélectionnée </h4></div>
+        </div>
+    </div>
+    <div class="col-lg-8" style="padding-left: 100px;">
+        <div class="blogp pt-4">
+            <div class="blogp-title">
+                <h2>Type de la réclamation: @ViewBag.count2.type</h2>
+            </div>
+            <div class="blog-meta blogp-meta">
+                <p><i class="icon-user"></i><span>@ViewBag.count2.user.FirstName&nbsp;@ViewBag.count2.user.LastName </span></p>
+                <p><i class="icon-clock"></i><span>@ViewBag.count2.dateReclamation</span></p>
+                <p><i class="icon-bubble"></i><span>@ViewBag.count1 réponses</span></p>
+            </div>
+            <div class="blogp-post">
+                <p>@ViewBag.count2.description</p>
+            </div>
+        </div>
+    </div>
+   
+    <div class="comment">
+        <ul class="comment-list">
+            <li>
+                @if (ViewBag.count1 != 0)
+                {
+                    <center><div class="sub-ttl-text">Les réponses (@ViewBag.count1) </div></center>
+                    foreach (var item in ViewBag.result)
+                    {
+                        if (item.user.id == ViewBag.count2.userId)
+                        {
+                            <ul class="comment-list second-comment" style="padding-top: 10px;margin-top: 0px;border-top-width:0.5px;border-top-width: 1px;">
+                                <li>
+                                    <div class="row">
+                                        <div class="col-2 hidden-xs-down pr-0 comment-img" style="padding-left: 135px;padding-top: 0px;">
+                                            <img src="~/Mail/user.png" alt="" style="width: 90px;height: 90px;">
+                                        </div>
+                                        <div class="col-10 comment-detail text-left" style="padding-left: 50px;">
+                                            <div class="comment-meta">
+                                                <span>@item.user.firstName &nbsp;@item.user.lastName </span>
+                                                <span>@item.dateReponse</span>
+                                            </div>
+                                            <div class="comment-post" style="width: 790px;">
+                                               @item.description
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        }
+                        if (item.user.id != ViewBag.count2.userId)
+                        {
+                            <div class="row">
+                                <div class="col-2 hidden-xs-down pr-0 comment-img" style="padding-left: 200px;padding-top: 0px;">
+                                    <img src="~/Mail/user.png" alt="" style="width: 90px;height: 90px;">
+                                </div>
+                                <div class="col-10 comment-detail text-left" style="padding-left: 80px;width: 1035px;height: 50px;padding-top: 10px;">
+                                    <div class="comment-meta">
+                                        <span>@item.user.firstName &nbsp;@item.user.lastName </span>
+                                        <span>@item.dateReponse</span>
+                                    </div>
+                                    <div class="comment-post" style="width: 1000px;">
+                                        @item.description
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    }
+                }
+            </li>
+        </ul>
+    </div>
+    <br />
+    
+    @if (ViewBag.count2.etat == "EnCours")
+    {<center><div class="sub-ttl-text">Ajouter une réponse </div></center>
+        using (Html.BeginForm("Create", "ReponseReclamation", new { idReclamation = @ViewBag.count2.idReclamation, idUser = @ViewBag.count2.userId }))
+        {
+            <div class="col-8" style="padding-left: 375px;">
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input">
+                    @Html.EditorFor(model => model.description, new { htmlAttributes = new { @class = "mdl-textfield__input", required = "required", style = "width: 600px;" } })
+                    @Html.LabelFor(model => model.description, htmlAttributes: new { @class = "mdl-textfield__label" })
+                </div>
+            </div><br />
+            <center>
+                <div class="col-8 text-center">
+                    <button class="btn btn-outline btn-success btn-pill btn-outline-1x m-1">Submit</button>
+                    <a class="btn btn-outline btn-danger btn-pill btn-outline-1x m-1" href="/Reclamation/Display?idUser=@ViewBag.userId">Retour</a>
+                </div>
+            </center>
+        }
+    }
+    <center>
+        <div class="col-lg-6">
+            @if (ViewBag.count2.etat == "EnAttente")
+            {
+                <br />
+                <div class="alert alert-danger" role="alert">
+                    La réclamation est en cours de traitement.Merci de patienter!
+                </div><br /><br />
+                <a class="btn btn-outline btn-danger btn-pill btn-outline-1x m-1" href="/Reclamation/Display?idUser=@ViewBag.userId">Retour</a>
+            }
+            @if (ViewBag.count2.etat == "Traitée")
+            {
+                <br />
+                <div class="alert alert-primary" role="alert">
+                    La réclamation est déjà traitée. Vous pouvez consulter les réponses uniquement.Merci!
+                </div><br /><br />
+                <a class="btn btn-outline btn-danger btn-pill btn-outline-1x m-1" href="/Reclamation/Display?idUser=@ViewBag.userId">Retour</a>
+            }
+        </div>
+    </center>
+        <br /><br />
+</body>
+
+</html>
