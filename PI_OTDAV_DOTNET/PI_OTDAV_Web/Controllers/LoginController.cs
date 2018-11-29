@@ -36,7 +36,8 @@ namespace PI_OTDAV_Web.Controllers
                             Session["id"] = ViewBag.result.id;
                             Session["nom"] = ViewBag.result.firstName;
                             Session["prenom"] = ViewBag.result.lastName;
-                           
+                            Session["user"] = ViewBag.result.userName;
+
                         return View("Dashbord");
                     }
                     else if ((ViewBag.result.accountType == "DEPOSITOR" ||
