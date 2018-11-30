@@ -239,6 +239,10 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+
+    <Compile Include="Controllers\PasswordController.cs" />
+    <Compile Include="Controllers\RegistrationMemberController.cs" />
+
     <Compile Include="Controllers\NotificationController.cs" />
     <Compile Include="Controllers\OeuvreDeclarationController.cs" />
     <Compile Include="Controllers\ReclamationController.cs" />
@@ -250,7 +254,9 @@
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\MailModel.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Controllers\RegistrationDepositorController.cs" />
     <Compile Include="Models\Notification.cs" />
     <Compile Include="Models\oeuvredeclaration.cs" />
     <Compile Include="Models\Reclamation.cs" />
@@ -357,6 +363,13 @@
     <Content Include="Views\Login\Dashbord.cshtml" />
     <Content Include="Views\Login\Login.cshtml" />
     <Content Include="Views\Login\Wait.cshtml" />
+    <Content Include="Views\Login\ServerDown.cshtml" />
+    <Content Include="Views\Registration\Create.cshtml" />
+    <Content Include="Views\RegistrationMember\Create.cshtml" />
+    <Content Include="Views\Login\Edit.cshtml" />
+    <Content Include="Views\Login\PasswordRecover.cshtml" />
+    <Content Include="Views\Login\PasswordRecoverrrr.cshtml" />
+    <Content Include="Views\Password\Create.cshtml" />
     <Content Include="Views\Login\RegDep.cshtml" />
     <Content Include="Views\OeuvreDeclaration\AjouterOuvre.cshtml" />
     <Content Include="Views\OeuvreDeclaration\DispalyAccepterArtWorkByUser.cshtml" />
@@ -385,7 +398,6 @@
     <Folder Include="Content\dist\" />
     <Folder Include="Content\images\" />
     <Folder Include="Content\uploads\" />
-    <Folder Include="Views\Registration\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

@@ -1,12 +1,11 @@
-﻿using PI_OTDAV_Web.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
 using System.Web;
 using System.Web.Mvc;
 
-namespace PI_OTDAV_Web.Controllers
+namespace PI_OTDAV_Web.Models
 {
     public class RegistrationController : Controller
     {
@@ -23,27 +22,21 @@ namespace PI_OTDAV_Web.Controllers
         }
 
         // GET: Registration/Create
-        public ActionResult CreateDepostor()
+        public ActionResult Create()
         {
             return View();
         }
 
+
         // POST: Registration/Create
         [HttpPost]
-        public ActionResult CreateDepost (User user)
+        public ActionResult Create(User user)
         {
-            try
-            {
-                user.accountType = "DEPOSITOR"; 
-                HttpClient client = new HttpClient();
-                client.BaseAddress = new Uri("http://localhost:18080");
-                client.PostAsJsonAsync<User>("PI_OTDAV_4GL5B-web/OTDAV/user", user).ContinueWith((postTask) => postTask.Result.EnsureSuccessStatusCode());
-                return RedirectToAction("Login");
-            }
-            catch
-            {
-                return View();
-            }
+            user.accountType = "DEPOSITOR";
+            HttpClient client = new HttpClient();
+            client.BaseAddress = new Uri("http://localhost:18080");
+            client.PostAsJsonAsync<User>("PI_OTDAV_4GL5B-web/api/user", user).ContinueWith((postTask) => postTask.Result.EnsureSuccessStatusCode());
+            return Redirect("/Login/Login"); 
         }
 
         // GET: Registration/Edit/5

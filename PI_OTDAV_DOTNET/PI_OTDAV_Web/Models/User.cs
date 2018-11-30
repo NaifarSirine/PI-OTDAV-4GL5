@@ -27,7 +27,7 @@ namespace PI_OTDAV_Web.Models
         [DataType(DataType.Date)]
         public DateTime? birthday { get; set; }
 
-        [StringLength(maximumLength: 8, MinimumLength = 8)]
+        [Required(ErrorMessage ="N° CIN est obligatoire")]
         public string cin { get; set; }
 
 
@@ -36,6 +36,7 @@ namespace PI_OTDAV_Web.Models
         [DataType(DataType.Date)]
         public DateTime? dateCin { get; set; }
 
+        [Required]
         public string firstName { get; set; }
 
         public int? fonction { get; set; }
@@ -43,12 +44,14 @@ namespace PI_OTDAV_Web.Models
 
         public string gouverment { get; set; }
 
-
+        [Required]
         public string lastName { get; set; }
 
+        [Required]
         [DataType(DataType.Password)]
         public string password { get; set; }
 
+        [Required]
         [DataType(DataType.PhoneNumber)]
         public int phone { get; set; }
 
@@ -62,7 +65,7 @@ namespace PI_OTDAV_Web.Models
 
         [Required]
         public string userName { get; set; }
-
+        [Required]
         [DataType(DataType.EmailAddress)]
         public string mail { get; set; }
 

@@ -27,8 +27,9 @@ namespace PI_OTDAV_Web.Controllers
 
                 if (ViewBag.result != null)
                 {
-                   
-                    if (ViewBag.result.accountType == "ADMINISTRATEUR") {
+
+                    if (ViewBag.result.accountType == "ADMINISTRATEUR")
+                    {
                         return View("Admin");
                     }
                     else if ((ViewBag.result.accountType == "DEPOSITOR" ||
@@ -38,8 +39,13 @@ namespace PI_OTDAV_Web.Controllers
                         Session["id"] = ViewBag.result.id;
                         Session["nom"] = ViewBag.result.firstName;
                         Session["prenom"] = ViewBag.result.lastName;
+
+                        Session["user"] = ViewBag.result.userName;
+
+
                         Session["userName"] = ViewBag.result.userName;
                         Session["nbNotif"] = ns.GetNbNotif(ViewBag.result.id);
+
                         return View("Dashbord");
                     }
                     else if ((ViewBag.result.accountType == "DEPOSITOR" ||
@@ -81,49 +87,67 @@ namespace PI_OTDAV_Web.Controllers
         }
 
 
-        // GET: Login/Details/5
-        public ActionResult Details(int id)
+        public ActionResult GoRegDep()
         {
-            return View();
+            return Redirect("/Registration/create");
         }
 
-        // GET: Login/Create
+
+        public ActionResult GoRegMem()
+        {
+            return Redirect("/RegistrationMember/create");
+        }
+
+        public ActionResult GoPassworRecover() {
+            return Redirect("/Password/Create");
+        }
+
+        // POST: Login/GoRegDep
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Login/Create
-        [HttpPost]
-        public ActionResult Create(FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add insert logic here
 
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
-        }
 
-        // GET: Login/Edit/5
+        // GET: Conge/Edit/5
         public ActionResult Edit(int id)
         {
+            Models.User user = null;
+
+            HttpClient Client = new HttpClient();
+            Client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
+            HttpResponseMessage response = Client.GetAsync("http://localhost:18080/levio.esprit-web/rest/conge/" + id).Result;
+            if (response.IsSuccessStatusCode)
+            {
+                user = response.Content.ReadAsAsync<User>().Result;
+
+            }
+
+            else
+            {
+                ViewBag.result = "error";
+            }
+
+
+
             return View();
         }
 
-        // POST: Login/Edit/5
+
+        // POST: User/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public ActionResult Edit(User user)
         {
             try
             {
-                // TODO: Add update logic here
+                HttpClient Client = new HttpClient();
+                HttpResponseMessage response = Client.PutAsJsonAsync<User>("http://localhost:18080/PI_OTDAV_4GL5B-web/api/user", user).ContinueWith((postTask) => postTask.Result.EnsureSuccessStatusCode()).Result;
 
-                return RedirectToAction("Index");
+                if (response.IsSuccessStatusCode)
+                    return View("Login");
+                else
+                    return View();
             }
             catch
             {
@@ -131,26 +155,24 @@ namespace PI_OTDAV_Web.Controllers
             }
         }
 
-        // GET: Login/Delete/5
-        public ActionResult Delete(int id)
+        // Get: User/Edit/5
+   
+        public ActionResult PasswordRecover()
         {
             return View();
         }
 
-        // POST: Login/Delete/5
-        [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add delete logic here
 
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
+        [HttpPost]
+        public ActionResult PasswordRecoverrrr(MailModel model)
+        {
+
+            return RedirectToAction("PasswordRecoverrrr"); 
         }
-    }
+
+
+
+
+    } 
+
 }
