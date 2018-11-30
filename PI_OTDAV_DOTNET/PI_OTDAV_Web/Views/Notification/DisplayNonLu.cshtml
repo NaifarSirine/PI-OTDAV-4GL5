@@ -1,0 +1,41 @@
+﻿@model IEnumerable<PI_OTDAV_Web.Models.Notification>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>DisplayLu</title>
+
+</head>
+<body>
+    <br /><br /><br />
+    <div class="col-md-12">
+        <div class="panel panel-default">
+            <div class="panel-head">
+                <center><div><h4>Consulter <span class="text-primary">les notifications</span> non lues <span class="text-success">(@ViewBag.count1/@ViewBag.count3)</span>.</h4></div></center>
+            </div>
+            <div class="panel-body">
+                <center>
+                    <a class="btn btn-outline btn-primary btn-pill btn-outline-1x m-1" href="/Notification/DisplayLu?idDestination= @HttpContext.Current.Session["id"]">Consulter les notifications lues</a>
+                    <a class="btn btn-outline btn-primary btn-pill btn-outline-1x m-1" href="/Notification/DisplayHistorique?idUser= @HttpContext.Current.Session["id"]">Consulter l'historique</a>
+                </center>
+            </div>
+            <div class="panel-wrapper">
+                <div class="panel-body">
+                    <div class="list-group">
+                        @foreach (var item in ViewBag.result)
+                        {
+                            <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                                <div class="d-flex w-100 justify-content-between">
+                                    <h5 class="mb-1"><span class="text-primary">Type :</span> @item.type</h5>
+                                    <small class="text-muted">@item.dateNotification</small>
+                                </div>
+                                <p class="mb-1">@item.description</p>
+                                <small class="text-muted">@item.destination.firstName  @item.destination.lastName</small>
+                            </a>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+</body>
+</html>

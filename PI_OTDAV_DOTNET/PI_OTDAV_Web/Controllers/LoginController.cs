@@ -1,4 +1,5 @@
-﻿using PI_OTDAV_Web.Models;
+﻿using PI_OTDAV_Services.Services;
+using PI_OTDAV_Web.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,6 +12,7 @@ namespace PI_OTDAV_Web.Controllers
 {
     public class LoginController : Controller
     {
+        NotificationServices ns = new NotificationServices();
         // GET: User
         public ActionResult Login(string username, string password)
         {
@@ -37,7 +39,12 @@ namespace PI_OTDAV_Web.Controllers
                         Session["id"] = ViewBag.result.id;
                         Session["nom"] = ViewBag.result.firstName;
                         Session["prenom"] = ViewBag.result.lastName;
+
                         Session["user"] = ViewBag.result.userName;
+
+
+                        Session["userName"] = ViewBag.result.userName;
+                        Session["nbNotif"] = ns.GetNbNotif(ViewBag.result.id);
 
                         return View("Dashbord");
                     }
@@ -73,16 +80,18 @@ namespace PI_OTDAV_Web.Controllers
             return View("login");
         }
 
-        // GET: Login/GoHome
-        public ActionResult GoHome()
+        // GET: Login/Details/5
+        public ActionResult GoHome(int id)
         {
             return View("Login");
         }
+
 
         public ActionResult GoRegDep()
         {
             return Redirect("/Registration/create");
         }
+
 
         public ActionResult GoRegMem()
         {

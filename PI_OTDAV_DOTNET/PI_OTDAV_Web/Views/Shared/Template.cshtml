@@ -31,26 +31,22 @@
     <link href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" />
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
     <script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
-
-
-    
 </head>
 <body>
-
     <!-- Start Header Section -->
     <header class="header header-2">
         <div class="hdr-topbar">
             <div class="layer-stretch">
                 <div class="row pt-3 pb-3 align-items-center">
-                    @*<div class="col-md-5">
+                    <div class="col-md-5">
                         <img alt="Logo OTDAV" src="~/Mail/logo.png" width="180" height="80" />
-                    </div>*@
+                    </div>
                     <div class="col-md-7 hdr-link text-right d-none d-sm-none d-md-block d-lg-block d-xl-block">
                         <a class="m-1"><i class="icon-login mr-2"></i>Login</a>
                         <div class="separator"></div>
                         <a class="m-1"><i class="icon-user-follow mr-2"></i>Register</a>
                         <div class="separator"></div>
-                        <a class="m-1" id="my-account"><i class="icon-user-follow mr-2"></i> @HttpContext.Current.Session["user"].ToString()  </a>
+                        <a class="m-1" id="my-account"><i class="icon-user-follow mr-2"></i>@HttpContext.Current.Session["userName"]</a>
                     </div>
                 </div>
             </div>
@@ -59,284 +55,76 @@
             <div class="tbl">
                 <div class="tbl-row">
                     <!-- Start Header Logo Section -->
-                  <!--  <div class="tbl-cell hdr-logo">
-                        <a href="index.html"><img src="images/logo.png" alt=""></a>
-                    </div> End Header Logo Section -->
+
                     <div class="tbl-cell hdr-menu">
                         <!-- Start Menu Section -->
                         <ul class="menu">
+
                             <li class="menu-megamenu-li">
-                                <a class="mdl-button mdl-js-button mdl-js-ripple-effect">Home <i class="fa fa-chevron-down"></i></a>
-                                <ul class="menu-megamenu menu-megamenu-small">
-                                    <li class="row">
-                                        <div class="col-lg-4">
-                                            <ul>
-                                                <li><a href="index.html">Home Style 1</a></li>
-                                                <li><a href="index-1.html">Home Style 2</a></li>
-                                                <li><a href="index-2.html">Home Style 3</a></li>
-                                                <li><a href="index-3.html">Home Style 4</a></li>
-                                                <li><a href="index-4.html">Home Style 5</a></li>
-                                            </ul>
-                                        </div>
-                                        <div class="col-lg-4">
-                                            <ul>
-                                                <li><a href="index-5.html">Home Style 6</a></li>
-                                                <li><a href="index-6.html">Home Style 7</a></li>
-                                                <li><a href="index-7.html">Home Style 8</a></li>
-                                                <li><a href="index-8.html">Home Style 9</a></li>
-                                                <li><a href="index-9.html">Home Style 10</a></li>
-                                            </ul>
-                                        </div>
-                                        <div class="col-lg-4">
-                                            <ul>
-                                                <li><a href="index-ecommerce.html">Home E-commerce</a></li>
-                                                <li><a href="index-law.html">Home Law firm</a></li>
-                                                <li><a href="index-property.html">Home Property</a></li>
-                                                <li><a href="index-listing.html">Home Listing</a></li>
-                                            </ul>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a class="mdl-button mdl-js-button mdl-js-ripple-effect">Feature <i class="fa fa-chevron-down"></i></a>
-                                <ul class="menu-dropdown">
-                                    <li>
-                                        <a>Property</a>
-                                        <ul class="menu-dropdown">
-                                            <li><a href="property-1.html">Property Listing 1</a></li>
-                                            <li><a href="property-2.html">Property Listing 2</a></li>
-                                            <li><a href="property-3.html">Property Listing 3</a></li>
-                                            <li><a href="property-page.html">Property Page</a></li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <a>Page Header</a>
-                                        <ul class="menu-dropdown">
-                                            <li><a href="page-header-1.html">Page Header 1</a></li>
-                                            <li><a href="page-header-2.html">Page Header 2</a></li>
-                                            <li><a href="page-header-3.html">Page Header 3</a></li>
-                                            <li><a href="page-header-4.html">Page Header 4</a></li>
-                                            <li><a href="page-header-5.html">Page Header 5</a></li>
-                                            <li><a href="page-header-6.html">Page Header 6</a></li>
-                                            <li><a href="page-header-7.html">Page Header 7</a></li>
-                                            <li><a href="page-header-8.html">Page Header 8</a></li>
-                                            <li><a href="page-header-9.html">Page Header 9</a></li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <a>Page Footer</a>
-                                        <ul class="menu-dropdown menu-dropdown-left">
-                                            <li><a href="page-footer-1.html">Page Footer 1</a></li>
-                                            <li><a href="page-footer-2.html">Page Footer 2</a></li>
-                                            <li><a href="page-footer-3.html">Page Footer 3</a></li>
-                                            <li><a href="page-footer-4.html">Page Footer 4</a></li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <a>Side Panel</a>
-                                        <ul class="menu-dropdown">
-                                            <li><a href="side-panel-1.html">Light Side Panel</a></li>
-                                            <li><a href="side-panel-2.html">Dark Side Panel</a></li>
-                                            <li><a href="side-panel-3.html">Colored Side Panel</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="popup.html">Popups</a></li>
-                                    <li><a href="coming-soon.html">Coming Soon</a></li>
-                                    <li><a href="404.html">404 Page Not Found</a></li>
-                                    <li><a href="503.html">503 Temporarily Unavailable</a></li>
-                                </ul>
-                            </li>
-                            <li class="menu-megamenu-li">
-                                <a id="menu-pages" class="mdl-button mdl-js-button mdl-js-ripple-effect">Pages <i class="fa fa-chevron-down"></i></a>
+                                <a id="menu-pages" class="mdl-button mdl-js-button mdl-js-ripple-effect">Gestion perceptions/repartitions <i class="fa fa-chevron-down"></i></a>
                                 <ul class="menu-megamenu">
                                     <li class="row">
                                         <div class="col-lg-2">
-                                            <div class="megamenu-ttl">Service Styles</div>
                                             <ul>
-                                                <li><a href="services-1.html">Services Style 1</a></li>
-                                                <li><a href="services-2.html">Services Style 2</a></li>
-                                                <li><a href="services-3.html">Services Style 3</a></li>
-                                                <li><a href="services-4.html">Services Style 4</a></li>
-                                                <li><a href="services-5.html">Services Style 5</a></li>
-                                                <li><a href="services-6.html">Services Style 6</a></li>
-                                                <li><a href="services-7.html">Services Style 7</a></li>
-                                            </ul>
-                                        </div>
-                                        <div class="col-lg-2">
-                                            <div class="megamenu-ttl">Team Styles</div>
-                                            <ul>
-                                                <li><a href="team-1.html">Team Style 1</a></li>
-                                                <li><a href="team-2.html">Team Style 2</a></li>
-                                                <li><a href="team-3.html">Team Style 3</a></li>
-                                                <li><a href="team-4.html">Team Style 4</a></li>
-                                                <li><a href="team-5.html">Team Style 5</a></li>
-                                                <li><a href="team-6.html">Team Style 6</a></li>
-                                                <li><a href="team-7.html">Team Style 7</a></li>
-                                            </ul>
-                                        </div>
-                                        <div class="col-lg-2">
-                                            <div class="megamenu-ttl">Shop Styles</div>
-                                            <ul>
-                                                <li><a href="shop-1.html">Shop Style 1</a></li>
-                                                <li><a href="shop-2.html">Shop Style 2</a></li>
-                                                <li><a href="shop-3.html">Shop Style 3</a></li>
-                                                <li><a href="shop-4.html">Shop Style 4</a></li>
-                                                <li><a href="shop-5.html">Shop Style 5</a></li>
-                                                <li><a href="shop-6.html">Shop Style 6</a></li>
-                                                <li><a href="shop-7.html">Shop Style 7</a></li>
-                                            </ul>
-                                        </div>
-                                        <div class="col-lg-2">
-                                            <div class="megamenu-ttl">Shop Styles</div>
-                                            <ul>
-                                                <li><a href="shop-8.html">Shop Style 8</a></li>
-                                                <li><a href="shop-9.html">Shop Style 9</a></li>
-                                                <li><a href="shop-10.html">Shop Style 10</a></li>
-                                                <li><a href="shop-page-1.html">Product Page 1</a></li>
-                                                <li><a href="shop-page-2.html">Product Page 2</a></li>
-                                                <li><a href="shop-page-3.html">Product Page 3</a></li>
-                                            </ul>
-                                        </div>
-                                        <div class="col-lg-2">
-                                            <div class="megamenu-ttl">Info Pages</div>
-                                            <ul>
-                                                <li><a href="about-1.html">About Us Style 1</a></li>
-                                                <li><a href="about-2.html">About Us Style 2</a></li>
-                                                <li><a href="about-3.html">About Us Style 3</a></li>
-                                                <li><a href="contact-1.html">Contact Us Style 1</a></li>
-                                                <li><a href="contact-2.html">Contact Us Style 2</a></li>
-                                                <li><a href="gallery-1.html">Gallery Style</a></li>
-                                                <li><a href="faq.html">FAQ</a></li>
-                                            </ul>
-                                        </div>
-                                        <div class="col-lg-2">
-                                            <div class="megamenu-ttl">Other Pages</div>
-                                            <ul>
-                                                <li><a href="event-1.html">Event Style 1</a></li>
-                                                <li><a href="event-2.html">Event Style 2</a></li>
-                                                <li><a href="event-3.html">Event Style 3</a></li>
-                                                <li><a href="event-4.html">Event Style 4</a></li>
-                                                <li><a href="event-page-1.html">Event Details Page</a></li>
-                                                <li><a href="signin.html">Sign In or Login</a></li>
-                                                <li><a href="signup.html">Sign Up or Register</a></li>
+                                                <li><a href="/Perception/DisplayPerception">Consulter les perceptions</a></li>
+                                                <li><a href="/Repartition/DisplayRepartition">Consulter les repartitions</a></li>
+                                                <li><a href="/PerceptionCategory/Display">Consulter les categories</a></li>
+                                                <li><a href="/Espace/DisplayEspace">Consulter les espaces</a></li>
                                             </ul>
                                         </div>
                                     </li>
                                 </ul>
                             </li>
-                            <li>
-                                <a class="mdl-button mdl-js-button mdl-js-ripple-effect">Portfolio <i class="fa fa-chevron-down"></i></a>
-                                <ul class="menu-dropdown">
-                                    <li>
-                                        <a>Portfolio Default</a>
-                                        <ul class="menu-dropdown menu-dropdown-left">
-                                            <li><a href="portfolio-1.html">2 Column</a></li>
-                                            <li><a href="portfolio-2.html">3 Column</a></li>
-                                            <li><a href="portfolio-3.html">4 Column</a></li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <a>Portfolio Wide</a>
-                                        <ul class="menu-dropdown menu-dropdown-left">
-                                            <li><a href="portfolio-4.html">Wide Portfolio</a></li>
-                                            <li><a href="portfolio-5.html">No Spacing Portfolio</a></li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <a>Portfolio Masonary</a>
-                                        <ul class="menu-dropdown menu-dropdown-left">
-                                            <li><a href="portfolio-6.html">3 Column Portfolio</a></li>
-                                            <li><a href="portfolio-7.html">4 Column Portfolio</a></li>
-                                            <li><a href="portfolio-8.html">Wide Portfolio</a></li>
-                                            <li><a href="portfolio-9.html">No Spacing Portfolio</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="portfolio-grid.html">Portfolio Grid</a></li>
-                                    <li><a href="portfolio-list.html">Portfolio List</a></li>
-                                </ul>
-                            </li>
+                            
                             <li class="menu-megamenu-li">
-                                <a class="mdl-button mdl-js-button mdl-js-ripple-effect">Blogs <i class="fa fa-chevron-down"></i></a>
+                                <a id="menu-pages" class="mdl-button mdl-js-button mdl-js-ripple-effect">Gestion des paiements <i class="fa fa-chevron-down"></i></a>
+                                <ul class="menu-megamenu">
+                                    <li class="row">
+                                        <div class="col-lg-2">
+                                            <ul>
+                                                <li><a href="/paiment/Index">La liste des paiements</a></li>
+                                                <li><a href="/paimentClient/Index">Ma liste</a></li>
+                                                <li><a href="/paimentClient/Create">Ajouter paiement</a></li>
+                                            </ul>
+                                        </div>  
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li class="menu-megamenu-li">
+                                <a class="mdl-button mdl-js-button mdl-js-ripple-effect">Gestion des catégories <i class="fa fa-chevron-down"></i></a>
                                 <ul class="menu-megamenu menu-megamenu-medium">
                                     <li class="row">
                                         <div class="col-lg-3">
-                                            <div class="megamenu-ttl">Blog Grid Sytle</div>
                                             <ul>
-                                                <li><a href="blogs-1.html">Blog 2 Column</a></li>
-                                                <li><a href="blogs-2.html">Blog 3 Column</a></li>
-                                                <li><a href="blogs-3.html">Blog 4 Column</a></li>
-                                            </ul>
-                                        </div>
-                                        <div class="col-lg-3">
-                                            <div class="megamenu-ttl">Blog List Sytle</div>
-                                            <ul>
-                                                <li><a href="blogs-9.html">Blog List</a></li>
-                                                <li><a href="blogs-10.html">Blog List Left Sidebar</a></li>
-                                                <li><a href="blogs-11.html">Blog List Right Sidebar</a></li>
-                                            </ul>
-                                        </div>
-                                        <div class="col-lg-4">
-                                            <div class="megamenu-ttl">Blog with Sidebar Sytle</div>
-                                            <ul>
-                                                <li><a href="blogs-4.html">Blog 1 Column Right Sidebar</a></li>
-                                                <li><a href="blogs-5.html">Blog 2 Column Right Sidebar</a></li>
-                                                <li><a href="blogs-6.html">Blog 3 Column Right Sidebar</a></li>
-                                                <li><a href="blogs-7.html">Blog 2 Column Left Sidebar</a></li>
-                                                <li><a href="blogs-8.html">Blog 3 Column Left Sidebar</a></li>
-                                            </ul>
-                                        </div>
-                                        <div class="col-lg-2">
-                                            <div class="megamenu-ttl">Blog Page</div>
-                                            <ul>
-                                                <li><a href="blog-1.html">Blog Detail 1</a></li>
-                                                <li><a href="blog-2.html">Blog Detail 2</a></li>
+                                                <li><a href="/ArtworkCategories/Index">Les catégories des oeuvres</a></li>
+                                                <li><a href="/membershipcategories/Index">Les catégories des membres</a></li>
                                             </ul>
                                         </div>
                                     </li>
                                 </ul>
                             </li>
                             <li class="menu-megamenu-li">
-                                <a class="mdl-button mdl-js-button mdl-js-ripple-effect">Components <i class="fa fa-chevron-down"></i></a>
+                                <a class="mdl-button mdl-js-button mdl-js-ripple-effect">Gestion des oeuvres<i class="fa fa-chevron-down"></i></a>
                                 <ul class="menu-megamenu menu-megamenu-small">
                                     <li class="row">
                                         <div class="col-lg-4">
-                                            <div class="megamenu-ttl">Components Link</div>
                                             <ul>
-                                                <li><a href="components/accordions.html"><i class="icon-plus mr-2"></i> Accordions</a></li>
-                                                <li><a href="components/alerts.html"><i class="icon-exclamation mr-2"></i> Alerts</a></li>
-                                                <li><a href="components/badges.html"><i class="icon-badge mr-2"></i> Badge</a></li>
-                                                <li><a href="components/buttons.html"><i class="icon-star mr-2"></i> Buttons</a></li>
-                                                <li><a href="components/cards.html"><i class="icon-credit-card mr-2"></i> Cards</a></li>
-                                                <li><a href="components/dropcap.html"><i class="icon-bulb mr-2"></i> Dropcap</a></li>
-                                            </ul>
-                                        </div>
-                                        <div class="col-lg-4">
-                                            <div class="megamenu-ttl">Components Link</div>
-                                            <ul>
-                                                <li><a href="components/grid.html"><i class="icon-grid mr-2"></i> Grid</a></li>
-                                                <li><a href="components/lists.html"><i class="icon-list mr-2"></i> Lists</a></li>
-                                                <li><a href="components/panels.html"><i class="icon-speedometer mr-2"></i> Panels</a></li>
-                                                <li><a href="components/pricingtable.html"><i class="fa fa-table mr-2"></i> Pricing Table</a></li>
-                                                <li><a href="components/progressbars.html"><i class="icon-chart mr-2"></i> Progressbars</a></li>
-                                                <li><a href="components/sliders.html"><i class="icon-compass mr-2"></i> Sliders</a></li>
-                                            </ul>
-                                        </div>
-                                        <div class="col-lg-4">
-                                            <div class="megamenu-ttl">Components Link</div>
-                                            <ul>
-                                                <li><a href="components/social-list.html"><i class="icon-list mr-2"></i> Social List</a></li>
-                                                <li><a href="components/tables.html"><i class="fa fa-table mr-2"></i> Tables</a></li>
-                                                <li><a href="components/tabs.html"><i class="icon-cursor mr-2"></i> Tabs</a></li>
-                                                <li><a href="components/typography.html"><i class="icon-tag mr-2"></i> Typography</a></li>
+                                                <li><a href="/OeuvreDeclaration/DispalySimpleArtWorkByUser">Simples oeuvres</a></li>
+                                                <li><a href="/OeuvreDeclaration/DispalyEnAttenteArtWorkByUser">Oeuvres en attente</a></li>
+                                                <li><a href="/OeuvreDeclaration/DispalyAccepterArtWorkByUser">Oeuvres acceptées</a></li>
+                                                <li><a href="/OeuvreDeclaration/AjouterOuvre">Ajouter oeuvre</a></li>
                                             </ul>
                                         </div>
                                     </li>
                                 </ul>
                             </li>
-                           
+                            <li class="menu-megamenu-li">
+                                <a class="mdl-button mdl-js-button mdl-js-ripple-effect" href="/Reclamation/Display?idUser= @HttpContext.Current.Session["id"]">Gestion des réclamations</a>
+                            </li>
+
                             <li>
-                                <a class="mdl-button mdl-js-button mdl-js-ripple-effect hdr-search" href="#"><i class="fa fa-bell"></i><span class="cart-count">!<span></a>
+                                <a class="mdl-button mdl-js-button mdl-js-ripple-effect hdr-search" href="/Notification/DisplayNonLu?idDestination= @HttpContext.Current.Session["id"]"><i class="fa fa-bell"></i><span class="cart-count">@HttpContext.Current.Session["nbNotif"]<span></a>
                             </li>
                             <li class="mobile-menu-close"><i class="fa fa-times"></i></li>
 
@@ -372,29 +160,36 @@
             <!-- Start main Footer Section -->
             <div class="row layer-wrapper">
                 <div class="col-md-4 footer-block">
-                    <div class="footer-ttl"><p>Basic Info</p></div>
+                    <div class="footer-ttl"><p>A PROPOS</p></div>
                     <div class="footer-container footer-a">
                         <div class="tbl">
                             <div class="tbl-row">
                                 <div class="tbl-cell"><i class="fa fa-map-marker"></i></div>
                                 <div class="tbl-cell">
                                     <p class="paragraph-medium paragraph-white">
-                                        Your office, Building Name<br />
-                                        Street name, Area<br />
-                                        City, Country Pin Code
+
+                                        OTDAV <br />
+                                        Organisme Tunisien des Droits d’Auteur et des Droits Voisins<br />
+                                        7Avenue Mohamed Melki, 1005 El Omrane Tunis Tunisie
+
+
+
                                     </p>
                                 </div>
                             </div>
                             <div class="tbl-row">
                                 <div class="tbl-cell"><i class="fa fa-phone"></i></div>
                                 <div class="tbl-cell">
-                                    <p class="paragraph-medium paragraph-white">11122333333</p>
+                                    <p class="paragraph-medium paragraph-white">
+                                        Tél: + 216 71 957 115 / + 216 71 957 102 <br />  +216 957 109 /+216 957 097
+                                        <br />  Fax: + 216 71 957 083
+                                    </p>
                                 </div>
                             </div>
                             <div class="tbl-row">
                                 <div class="tbl-cell"><i class="fa fa-envelope"></i></div>
                                 <div class="tbl-cell">
-                                    <p class="paragraph-medium paragraph-white">hello@yourdomain.com</p>
+                                    <p class="paragraph-medium paragraph-white"> Email: otpda@planet.tn / otdav@otdav.tn</p>
                                 </div>
                             </div>
                         </div>
@@ -431,9 +226,7 @@
                     <div class="footer-container footer-c">
                         <div class="footer-subscribe">
 
-                            <div class="footer-subscribe-button">
-                                <button class="mdl-button mdl-js-button mdl-js-ripple-effect button button-primary">Submit</button>
-                            </div>
+
                         </div>
                         <ul class="social-list social-list-colored footer-social">
                             <li>
@@ -476,14 +269,13 @@
         <!-- Start Copyright Section -->
         <div id="copyright">
             <div class="layer-stretch">
-                <div class="paragraph-medium paragraph-white">2017 © Pepdev ALL RIGHTS RESERVED.</div>
+                <div class="paragraph-medium paragraph-white">2018 © 4GL5B ALL RIGHTS RESERVED.</div>
             </div>
         </div><!-- End of Copyright Section -->
     </footer><!-- End of Footer Section -->
     <!-- End of Footer Section -->
     <!-- **********Included Scripts*********** -->
     <!-- Jquery Library 2.1 JavaScript-->
-
     <!-- Popper JavaScript-->
     <script src="~/Content/assets/plugin/popper/popper.min.js"></script>
     <!-- Bootstrap Core JavaScript-->
@@ -515,6 +307,13 @@
 
 
 
+
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+    @RenderSection("styles", required: false)
+    <script src="~/Scripts/Highcharts-4.0.1/js/highcharts.js"></script>
 
 </body>
 

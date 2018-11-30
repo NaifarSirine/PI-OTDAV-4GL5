@@ -1,0 +1,89 @@
+﻿@model IEnumerable<PI_OTDAV_Domain.Entities.oeuvredeclaration>
+
+@{
+    ViewBag.Title = "DispalyEnAttenteArtWorkByUser";
+}
+
+<div class="layer-stretch">
+    <div class="layer-wrapper text-center">
+        <div class="layer-ttl"><h4>Vos oeuvres <span class="text-primary">en attente</span></h4></div>
+    </div>
+</div>
+
+
+<center><b>Nombre de vos oeuvres acceptés: </b><span class="badge badge-warning badge-sm"><b>@ViewBag.count2</b></span></center>
+<br /><br />
+<div class="col-12">
+    <div class="panel panel-default">
+        <div class="panel-head">
+            <div class="panel-title">Liste des oeuvres</div>
+        </div>
+        <div class="panel-wrapper">
+            <div class="panel-body">
+                <center>
+                    <table id="example" class="table-striped" width="1400" border="1">
+                        <thead>
+                            <tr>
+                                <th>
+                                    <center><b class="glyphicon-text-height">@Html.DisplayNameFor(model => model.Titre)</b></center>
+                                </th>
+                                <th>
+                                    <center><b class="glyphicon-text-height">@Html.DisplayNameFor(model => model.Description)</b></center>
+                                </th>
+                                <th>
+                                    <center><b class="glyphicon-text-height"> @Html.DisplayNameFor(model => model.Categorie)</b></center>
+                                </th>
+                                <th>
+                                    <center><b class="glyphicon-text-height">@Html.DisplayNameFor(model => model.DateInitial)</b></center>
+                                </th>
+                                <th></th>
+
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+            {
+                                <tr>
+                                    <td>
+                                        <center> <b class="glyphicon-text-height">@item.Titre</b></center>
+                                    </td>
+
+
+                                    <td>
+                                        <center><b class="glyphicon-text-height"> @item.Description</b></center>
+                                    </td>
+
+
+                                    <td>
+                                        <center> <b class="glyphicon-text-height"> @item.Categorie</b></center>
+                                    </td>
+                                    <td>
+                                        <center> <b class="glyphicon-text-height"> @item.Deadline.Value.ToString("dd-MM-yyyy")</b></center>
+                                    </td>
+                                    <td class="panel-body">
+                                        <center>
+                                            <button class="btn btn-primary btn-pill m-1">
+                                                @Html.ActionLink("Modifier", "Edit", "oeuvredeclaration", new { id = item.id }, new { @class = "" })
+                                            </button>
+                                            <button class="btn btn-danger btn-toggle btn-pill">
+                                                @Html.ActionLink("Supprimer", "SupprimerOeuvreDeclarerEnAttente", "oeuvredeclaration", new { id = item.id }, new { @class = "" })
+                                            </button>
+                                        </center>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                    <br /><br />
+                </center>
+            </div>
+        </div>
+    </div>
+</div>
+<br /><br /><br /><br /><br /><br /><br /><br />
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#example').DataTable();
+    });
+</script>
