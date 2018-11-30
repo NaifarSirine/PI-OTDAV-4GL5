@@ -31,15 +31,8 @@
     <link href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" />
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
     <script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
-
-
-    @Styles.Render("~/Content/css")
-
-    @Scripts.Render("~/bundles/modernizr")
-    @Scripts.Render("~/bundles/jquery")
 </head>
 <body>
-
     <!-- Start Header Section -->
     <header class="header header-2">
         <div class="hdr-topbar">
@@ -67,55 +60,22 @@
                         <!-- Start Menu Section -->
                         <ul class="menu">
 
-                            <li>
-                                <a class="mdl-button mdl-js-button mdl-js-ripple-effect">Feature <i class="fa fa-chevron-down"></i></a>
-                                <ul class="menu-dropdown">
-                                    <li>
-                                        <a>Property</a>
-                                        <ul class="menu-dropdown">
-                                            <li><a href="property-1.html">Property Listing 1</a></li>
-                                            <li><a href="property-2.html">Property Listing 2</a></li>
-                                            <li><a href="property-3.html">Property Listing 3</a></li>
-                                            <li><a href="property-page.html">Property Page</a></li>
-                                        </ul>
+                            <li class="menu-megamenu-li">
+                                <a id="menu-pages" class="mdl-button mdl-js-button mdl-js-ripple-effect">Gestion perceptions/repartitions <i class="fa fa-chevron-down"></i></a>
+                                <ul class="menu-megamenu">
+                                    <li class="row">
+                                        <div class="col-lg-2">
+                                            <ul>
+                                                <li><a href="/Perception/DisplayPerception">Consulter les perceptions</a></li>
+                                                <li><a href="/Repartition/DisplayRepartition">Consulter les repartitions</a></li>
+                                                <li><a href="/PerceptionCategory/Display">Consulter les categories</a></li>
+                                                <li><a href="/Espace/DisplayEspace">Consulter les espaces</a></li>
+                                            </ul>
+                                        </div>
                                     </li>
-                                    <li>
-                                        <a>Page Header</a>
-                                        <ul class="menu-dropdown">
-                                            <li><a href="page-header-1.html">Page Header 1</a></li>
-                                            <li><a href="page-header-2.html">Page Header 2</a></li>
-                                            <li><a href="page-header-3.html">Page Header 3</a></li>
-                                            <li><a href="page-header-4.html">Page Header 4</a></li>
-                                            <li><a href="page-header-5.html">Page Header 5</a></li>
-                                            <li><a href="page-header-6.html">Page Header 6</a></li>
-                                            <li><a href="page-header-7.html">Page Header 7</a></li>
-                                            <li><a href="page-header-8.html">Page Header 8</a></li>
-                                            <li><a href="page-header-9.html">Page Header 9</a></li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <a>Page Footer</a>
-                                        <ul class="menu-dropdown menu-dropdown-left">
-                                            <li><a href="page-footer-1.html">Page Footer 1</a></li>
-                                            <li><a href="page-footer-2.html">Page Footer 2</a></li>
-                                            <li><a href="page-footer-3.html">Page Footer 3</a></li>
-                                            <li><a href="page-footer-4.html">Page Footer 4</a></li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <a>Side Panel</a>
-                                        <ul class="menu-dropdown">
-                                            <li><a href="side-panel-1.html">Light Side Panel</a></li>
-                                            <li><a href="side-panel-2.html">Dark Side Panel</a></li>
-                                            <li><a href="side-panel-3.html">Colored Side Panel</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="popup.html">Popups</a></li>
-                                    <li><a href="coming-soon.html">Coming Soon</a></li>
-                                    <li><a href="404.html">404 Page Not Found</a></li>
-                                    <li><a href="503.html">503 Temporarily Unavailable</a></li>
                                 </ul>
                             </li>
+                            
                             <li class="menu-megamenu-li">
                                 <a id="menu-pages" class="mdl-button mdl-js-button mdl-js-ripple-effect">Gestion des paiements <i class="fa fa-chevron-down"></i></a>
                                 <ul class="menu-megamenu">
@@ -126,11 +86,7 @@
                                                 <li><a href="/paimentClient/Index">Ma liste</a></li>
                                                 <li><a href="/paimentClient/Create">Ajouter paiement</a></li>
                                             </ul>
-                                        </div>
-                                      
-                                       
-                                        
-                                        
+                                        </div>  
                                     </li>
                                 </ul>
                             </li>
