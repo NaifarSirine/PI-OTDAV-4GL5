@@ -39,6 +39,7 @@
 
     <!-- Start Login Section -->
     <div class="login">
+
         <div class="layer-stretch">
             <div class="layer-wrapper">
                @using (Html.BeginForm())
@@ -46,6 +47,8 @@
                   <div class="row pt-4">
                   
                     <div class="col-md-4">
+                        <h1>Connectez-vous</h1>
+                        <hr />
 
                         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input">
@@ -63,13 +66,17 @@
                             
                         </div>
                                                 <div class="pt-4 text-center">
-                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent button button-dark">Sign In</button>
+                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent button button-dark">Connecter</button>
                         </div>
           
+                        <div class="login-link">
+                            <a href="GoPassworRecover" > Mot de passe oublié </a>
+                           </div>
 
                         <div class="login-link">
                             <span class="paragraph-small">vous n'avez pas de compte</span>
-                            inscrvez vous en tant que  : <a href="GoRegDep" class=""> Déposant </a> <a href="#" class=""> Adhérant </a>
+                            inscrvez vous en tant que  : <a href="GoRegDep" class=""> Déposant </a> 
+                            <a href="GoRegMem" class=""> Adhérant </a>
                         </div>
                         
                     </div>

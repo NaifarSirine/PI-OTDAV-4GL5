@@ -1700,23 +1700,23 @@ input[type="number"]::-webkit-inner-spin-button {
   height: auto;
 }
 
-.form-control:-moz-placeholder {
+.dl-textfield__input:-moz-placeholder {
   color: #999999;
 }
 
-.form-control::-moz-placeholder {
+.dl-textfield__input::-moz-placeholder {
   color: #999999;
 }
 
-.form-control:-ms-input-placeholder {
+.dl-textfield__input:-ms-input-placeholder {
   color: #999999;
 }
 
-.form-control::-webkit-input-placeholder {
+.dl-textfield__input::-webkit-input-placeholder {
   color: #999999;
 }
 
-.form-control {
+.dl-textfield__input {
   display: block;
   width: 100%;
   height: 34px;
@@ -1734,21 +1734,21 @@ input[type="number"]::-webkit-inner-spin-button {
           transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
 }
 
-.form-control:focus {
+.dl-textfield__input:focus {
   border-color: #66afe9;
   outline: 0;
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
           box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
 }
 
-.form-control[disabled],
-.form-control[readonly],
-fieldset[disabled] .form-control {
+.dl-textfield__input[disabled],
+.dl-textfield__input[readonly],
+fieldset[disabled] .dl-textfield__input {
   cursor: not-allowed;
   background-color: #eeeeee;
 }
 
-textarea.form-control {
+textarea.dl-textfield__input {
   height: auto;
 }
 
@@ -1857,13 +1857,13 @@ textarea.input-lg {
   color: #c09853;
 }
 
-.has-warning .form-control {
+.has-warning .dl-textfield__input {
   border-color: #c09853;
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
           box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
 }
 
-.has-warning .form-control:focus {
+.has-warning .dl-textfield__input:focus {
   border-color: #a47e3c;
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #dbc59e;
           box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #dbc59e;
@@ -1880,13 +1880,13 @@ textarea.input-lg {
   color: #b94a48;
 }
 
-.has-error .form-control {
+.has-error .dl-textfield__input {
   border-color: #b94a48;
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
           box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
 }
 
-.has-error .form-control:focus {
+.has-error .dl-textfield__input:focus {
   border-color: #953b39;
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #d59392;
           box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #d59392;
@@ -1903,13 +1903,13 @@ textarea.input-lg {
   color: #468847;
 }
 
-.has-success .form-control {
+.has-success .dl-textfield__input {
   border-color: #468847;
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
           box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
 }
 
-.has-success .form-control:focus {
+.has-success .dl-textfield__input:focus {
   border-color: #356635;
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #7aba7b;
           box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #7aba7b;
@@ -1921,7 +1921,7 @@ textarea.input-lg {
   border-color: #468847;
 }
 
-.form-control-static {
+.dl-textfield__input-static {
   padding-top: 7px;
   margin-bottom: 0;
 }
@@ -1939,7 +1939,7 @@ textarea.input-lg {
     margin-bottom: 0;
     vertical-align: middle;
   }
-  .form-inline .form-control {
+  .form-inline .dl-textfield__input {
     display: inline-block;
   }
   .form-inline .radio,
@@ -3642,12 +3642,12 @@ input[type="button"].btn-block {
   padding-left: 0;
 }
 
-.input-group .form-control {
+.input-group .dl-textfield__input {
   width: 100%;
   margin-bottom: 0;
 }
 
-.input-group-lg > .form-control,
+.input-group-lg > .dl-textfield__input,
 .input-group-lg > .input-group-addon,
 .input-group-lg > .input-group-btn > .btn {
   height: 45px;
@@ -3657,20 +3657,20 @@ input[type="button"].btn-block {
   border-radius: 6px;
 }
 
-select.input-group-lg > .form-control,
+select.input-group-lg > .dl-textfield__input,
 select.input-group-lg > .input-group-addon,
 select.input-group-lg > .input-group-btn > .btn {
   height: 45px;
   line-height: 45px;
 }
 
-textarea.input-group-lg > .form-control,
+textarea.input-group-lg > .dl-textfield__input,
 textarea.input-group-lg > .input-group-addon,
 textarea.input-group-lg > .input-group-btn > .btn {
   height: auto;
 }
 
-.input-group-sm > .form-control,
+.input-group-sm > .dl-textfield__input,
 .input-group-sm > .input-group-addon,
 .input-group-sm > .input-group-btn > .btn {
   height: 30px;
@@ -3680,14 +3680,14 @@ textarea.input-group-lg > .input-group-btn > .btn {
   border-radius: 3px;
 }
 
-select.input-group-sm > .form-control,
+select.input-group-sm > .dl-textfield__input,
 select.input-group-sm > .input-group-addon,
 select.input-group-sm > .input-group-btn > .btn {
   height: 30px;
   line-height: 30px;
 }
 
-textarea.input-group-sm > .form-control,
+textarea.input-group-sm > .dl-textfield__input,
 textarea.input-group-sm > .input-group-addon,
 textarea.input-group-sm > .input-group-btn > .btn {
   height: auto;
@@ -3695,13 +3695,13 @@ textarea.input-group-sm > .input-group-btn > .btn {
 
 .input-group-addon,
 .input-group-btn,
-.input-group .form-control {
+.input-group .dl-textfield__input {
   display: table-cell;
 }
 
 .input-group-addon:not(:first-child):not(:last-child),
 .input-group-btn:not(:first-child):not(:last-child),
-.input-group .form-control:not(:first-child):not(:last-child) {
+.input-group .dl-textfield__input:not(:first-child):not(:last-child) {
   border-radius: 0;
 }
 
@@ -3740,7 +3740,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
   margin-top: 0;
 }
 
-.input-group .form-control:first-child,
+.input-group .dl-textfield__input:first-child,
 .input-group-addon:first-child,
 .input-group-btn:first-child > .btn,
 .input-group-btn:first-child > .dropdown-toggle,
@@ -3753,7 +3753,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
   border-right: 0;
 }
 
-.input-group .form-control:last-child,
+.input-group .dl-textfield__input:last-child,
 .input-group-addon:last-child,
 .input-group-btn:last-child > .btn,
 .input-group-btn:last-child > .dropdown-toggle,
@@ -4312,7 +4312,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
     margin-bottom: 0;
     vertical-align: middle;
   }
-  .navbar-form .form-control {
+  .navbar-form .dl-textfield__input {
     display: inline-block;
   }
   .navbar-form .radio,
